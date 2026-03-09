@@ -2,7 +2,7 @@
 title: Full-Stack E-commerce Platform
 subtitle: Helping a Small Business Grow Its Customer Base
 publishDate: 2025-04-01 00:00:00
-img: /rstewart.tech/images/ecom7.png
+img: /rstewart/images/ecom7.png
 img_alt: E-commerce Platform Icon
 description: |
 tags:
@@ -10,7 +10,7 @@ tags:
   - Full-Stack Development
   - Web Development
   - Business Growth
-project_image: /rstewart.tech/images/vercelStripeSupa.png
+project_image: /rstewart/images/vercelStripeSupa.png
 project_image_alt: Vercel Supabase Stripe
 ---
 

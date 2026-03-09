@@ -2,7 +2,7 @@
 title: Job Parts and Pricing Tool
 subtitle: 
 publishDate: 2022-03-02 00:00:00
-img: /rstewart.tech/images/ptool6.png
+img: /rstewart/images/ptool6.png
 description: 
  
 tags:
@@ -12,7 +12,7 @@ tags:
   - Bootstrap
   - Azure
 
-project_image: /rstewart.tech/images/ptool2.png
+project_image: /rstewart/images/ptool2.png
 project_image_alt: price tool
 ---
 

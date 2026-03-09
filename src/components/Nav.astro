@@ -5,10 +5,10 @@ import type { iconPaths } from "../components/IconPaths";
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/rstewart.tech/" },
-  { label: "Projects", href: "/rstewart.tech/projects" },
-  { label: "About", href: "/rstewart.tech/about" },
-  { label: "Tutoring", href: "/rstewart.tech/tutoring" },
+  { label: "Home", href: "/rstewart/" },
+  { label: "Projects", href: "/rstewart/projects" },
+  { label: "About", href: "/rstewart/about" },
+  { label: "Tutoring", href: "/rstewart/tutoring" },
 ];
 
 /** Icon links to social media */
@@ -146,7 +146,7 @@ const isCurrentPage = (href: string) => {
       };
 
       // Toggle menu visibility when the menu button is clicked.
-      btn.addEventListener("click", () => setExpanded(menu.hidden));
+      btn.addEventListener("click", () => setExpanded(!menu.hidden));
 
       // Hide menu button for large screens.
       const handleViewports = (e: MediaQueryList | MediaQueryListEvent) => {
