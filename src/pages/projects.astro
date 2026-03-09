@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Grid from "../components/Grid.astro";
+import Hero from "../components/Hero.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+import ContactCTA from "../components/ContactCTA.astro";
+
+const projects = (await getCollection("work")).sort(
+  (a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+---
+
+<BaseLayout
+  title="My Projects | Robert Stewart"
+  description="Learn about Robert Stewart's most recent projects"
+>
+  <div class="stack gap-8">
+    <main class="wrapper stack gap-8">
+      <Hero
+        title="Projects"
+        tagline="Here are a few projects I've worked on in the past."
+        align="start"
+      />
+      <Grid variant="offset">
+        {
+          projects.map((project) => (
+            <li>
+              <PortfolioPreview project={project} />
+            </li>
+          ))
+        }
+      </Grid>
+    </main>
+    <!-- <ContactCTA /> -->
+  </div>
+  <style>
+    /* Local styles removed as they are now handled by global.css */
+  </style>
+</BaseLayout>

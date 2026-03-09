@@ -1,0 +1,8 @@
+/*set own theme variables*/
+:root {
+    --background-color: #2A233E;
+    --text-color: #FFFFFF;
+    --primary-color: #4A90E2;
+    --secondary-color: #50E3C2;
+    --text-accent-color: #FF7139;
+}

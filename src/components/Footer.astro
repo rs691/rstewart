@@ -1,0 +1,95 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<footer>
+  <div class="group">
+    <p>© 2023 Robert Stewart</p>
+    <p>All rights reserved.</p>
+  </div>
+  <div class="socials">
+    <a href="https://github.com/rs691" target="_blank" rel="noopener noreferrer" class="social-icon">
+      <Icon icon="github3" />
+    </a>
+    <a href="https://www.linkedin.com/in/robert-stewart-m" target="_blank" rel="noopener noreferrer" class="social-icon">
+      <Icon icon="linkedin-logo" />
+    </a>
+    <a href="https://app.joinhandshake.com/profiles/robertstewart" target="_blank" rel="noopener noreferrer" class="social-icon">
+      <Icon icon="handshake" />
+    </a>
+  </div>
+</footer>
+<style>
+  .social-icon {
+    color: var(--gray-400);
+    font-size: var(--text-xl);
+    transition: color var(--theme-transition);
+    display: flex;
+  }
+
+  .social-icon:hover,
+  .social-icon:focus {
+    color: var(--accent-regular);
+  }
+
+  footer p {
+    margin: 0;
+    font-size: var(--text-sm);
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: auto;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    color: var(--gray-400);
+    font-size: var(--text-sm);
+    border-top: 1px solid var(--gray-800);
+  }
+
+  footer a {
+    color: var(--gray-400);
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 4px;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  footer a:hover,
+  footer a:focus {
+    text-decoration-color: currentColor;
+  }
+
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: 50em) {
+    footer {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 2.5rem 2.5rem;
+      max-width: 83rem;
+      margin-inline: auto;
+    }
+
+    .group {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+
+    .socials {
+      justify-content: flex-end;
+    }
+  }
+</style>

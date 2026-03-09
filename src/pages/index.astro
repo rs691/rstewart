@@ -1,0 +1,230 @@
+---
+// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Component Imports
+import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
+
+// Page section components
+import Skills from "../components/Skills.astro";
+
+// page images- import the profile pic from images/public
+
+import ContactCTA from "../components/ContactCTA.astro";
+import profile1 from "/public/images/profile1.png";
+---
+
+<BaseLayout>
+  <div class="stack gap-8">
+    <div class="wrapper stack gap-8 lg:gap-20">
+      <header class="hero">
+        <Hero
+          title="Hello, my name is Rob. "
+          tagline="I am a Software Developer who is always looking for new and exciting opportunities."
+          align="start"
+        >
+          <div class="roles">
+            <Pill><Icon icon="git-commit" size="1.45em" /> Commitment</Pill>
+            <Pill><Icon icon="code" size="1.45em" /> Development</Pill>
+            <Pill><Icon icon="kanban" size="1.45em" /> Teamwork</Pill>
+          </div>
+        </Hero>
+        <!-- add profilePic to an img -->
+        <img
+          alt="Robert Stewart's face"
+          width="340"
+          height="380"
+          src={profile1.src}
+        />
+      </header>
+      <Skills />
+    </div>
+    <ContactCTA />
+  </div>
+</BaseLayout>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 2rem;
+    text-align: center; /* Center text content as well */
+  }
+
+  .hero :global(.title) {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  .hero :global(.tagline) {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  }
+
+  .roles {
+    display: none;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  }
+
+  .hero img {
+    aspect-ratio: 3 / 4; /* Try a slightly taller ratio */
+    object-fit: cover;
+    object-position: top center; /* Try adjusting vertical position */
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+    font-weight: 100;
+    max-width: 60%; /* Shrink the image a bit more on mobile */
+    height: auto;
+    margin-left: auto; /* Center the image block */
+    margin-right: auto;
+
+    /* Animation and Interaction */
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.6s forwards;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .hero img:hover {
+    transform: scale(1.02) rotate(1deg);
+    box-shadow:
+      0 0 20px var(--accent-overlay),
+      var(--shadow-lg);
+  }
+
+  @media (min-width: 50em) {
+    .hero {
+      display: grid;
+      grid-template-columns: 6fr 4fr;
+      padding-inline: 2.5rem;
+      gap: 3.75rem;
+      align-items: flex-start; /* Align items to the start in the grid layout */
+      text-align: left; /* Reset text alignment for larger screens */
+    }
+
+    .roles {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .hero img {
+      aspect-ratio: 3 / 4; /* Keep the same ratio for larger screens or adjust if needed */
+      border-radius: 4.5rem;
+      object-fit: cover;
+      max-width: none; /* Reset max-width for larger screens */
+      margin-left: 0;
+      margin-right: 0;
+      object-position: top; /* Revert object-position for larger screens */
+    }
+  }
+
+  /* ====================================================== */
+
+  .section {
+    display: grid;
+    gap: 2rem;
+  }
+
+  .with-background {
+    position: relative;
+  }
+
+  .with-background::before {
+    --hero-bg: var(--bg-image-subtle-2);
+
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    left: 50%;
+    width: 100vw;
+    aspect-ratio: calc(2.25 / var(--bg-scale));
+    top: 0;
+    transform: translateY(-75%) translateX(-50%);
+    background:
+      url("../../public/images/noise.png") top center/220px repeat,
+      var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+      var(--gray-999);
+    background-blend-mode: overlay, normal, normal, normal;
+    mix-blend-mode: var(--bg-blend-mode);
+    z-index: -1;
+  }
+
+  .with-background.bg-variant::before {
+    --hero-bg: var(--bg-image-subtle-1);
+  }
+
+  .section-header {
+    justify-self: center;
+    text-align: center;
+    max-width: 50ch;
+    font-size: var(--text-md);
+    color: var(--gray-300);
+  }
+
+  .section-header h3 {
+    font-size: var(--text-2xl);
+  }
+
+  @media (min-width: 50em) {
+    .section {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: "header header header header" "gallery gallery gallery gallery";
+      gap: 5rem;
+    }
+
+    .section.with-cta {
+      grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+    }
+
+    .section-header {
+      grid-area: header;
+      font-size: var(--text-lg);
+    }
+
+    .section-header h3 {
+      font-size: var(--text-4xl);
+    }
+
+    .with-cta .section-header {
+      justify-self: flex-start;
+      text-align: left;
+    }
+
+    .gallery {
+      grid-area: gallery;
+    }
+
+    .cta {
+      grid-area: cta;
+    }
+  }
+
+  /* ====================================================== */
+
+  .mention-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid var(--gray-700);
+    border-radius: 1.5rem;
+    color: var(--gray-300);
+    background: var(--gradient-subtle);
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media (min-width: 50em) {
+    .mention-card {
+      border-radius: 1.5rem;
+      height: 9.5rem;
+    }
+  }
+</style>

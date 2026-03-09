@@ -1,0 +1,79 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+	project: CollectionEntry<"work">;
+}
+
+const { data, id } = Astro.props.project;
+---
+
+<div class="portfolio-preview">
+	<span class="title">{data.title}</span>
+	<a class="card" href={`/rstewart.tech/work/${id}`}>
+		<img
+			src={data.img}
+			alt={data.img_alt || ""}
+			loading="lazy"
+			decoding="async"
+		/>
+	</a>
+</div>
+
+<style>
+	.portfolio-preview {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.title {
+		margin-bottom: 0.5rem;
+		padding: 0.3rem 0.5rem;
+		background: var(--gray-999);
+		color: var(--gray-200);
+		border-radius: 0.375rem;
+		font-family: var(--font-brand);
+		font-size: var(--text-lg);
+		font-weight: 500;
+	}
+
+	.card {
+		display: grid;
+		height: 10rem;
+		background: var(--gradient-subtle);
+		border: 2px solid var(--gray-700);
+		border-radius: 0.75rem;
+		overflow: hidden;
+		box-shadow: var(--shadow-sm);
+		text-decoration: none;
+		transition:
+			border-color var(--theme-transition),
+			box-shadow var(--theme-transition);
+	}
+
+	.card:hover {
+		box-shadow: var(--shadow-md);
+		transform: scale(1.02);
+		transition:
+			box-shadow var(--theme-transition),
+			transform var(--theme-transition);
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	@media (min-width: 50em) {
+		.card {
+			height: 22rem;
+			border-radius: 1.5rem;
+		}
+
+		.title {
+			border-radius: 0.9375rem;
+		}
+	}
+</style>

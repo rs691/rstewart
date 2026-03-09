@@ -1,0 +1,140 @@
+---
+// Learn about using Astro layouts:
+// https://docs.astro.build/en/core-concepts/layouts/
+
+// Component Imports
+import MainHead from "../components/MainHead.astro";
+import Nav from "../components/Nav.astro";
+import { ViewTransitions } from "astro:transitions";
+
+interface Props {
+  title?: string | undefined;
+  description?: string | undefined;
+  subtitle?: string | undefined;
+  tagline?: string | undefined;
+}
+
+const { title, description, subtitle, tagline } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title={title}
+      description={description}
+      subtitle={subtitle}
+      tagline={tagline}
+    />
+    <ViewTransitions />
+  </head>
+  <body>
+    <div class="stack backgrounds">
+      <div class="stars-container">
+        {
+          Array.from({ length: 40 }).map((_, i) => {
+            const size = Math.random() * 4 + 2;
+            const left = Math.random() * 100;
+            const top = Math.random() * 100;
+            const duration = Math.random() * 5 + 5;
+            const delay = Math.random() * 5;
+            const colorClass = i % 2 === 0 ? "purple" : "pink";
+            return (
+              <div
+                class={`star ${colorClass} shimmer floating`}
+                style={{
+                  width: `${size}px`,
+                  height: `${size}px`,
+                  left: `${left}%`,
+                  top: `${top}%`,
+                  "--duration": `${duration}s`,
+                  animationDelay: `${delay}s`,
+                }}
+              />
+            );
+          })
+        }
+      </div>
+      <Nav transition:persist />
+      <main transition:animate="slide">
+        <slot />
+      </main>
+    </div>
+
+    <script>
+      // Add "loaded" class once the document has completely loaded.
+      addEventListener("load", () =>
+        document.documentElement.classList.add("loaded"),
+      );
+
+      // Re-apply the saved theme after every View Transition page swap.
+      // The incoming <html> element loses the `theme-dark` class because
+      // ViewTransitions replaces the head. This listener restores it.
+      function applyTheme() {
+        const stored =
+          typeof localStorage !== "undefined"
+            ? localStorage.getItem("theme")
+            : null;
+        const theme =
+          stored ??
+          (window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light");
+        document.documentElement.classList.toggle(
+          "theme-dark",
+          theme === "dark",
+        );
+      }
+
+      // Fires after every client-side navigation swap.
+      document.addEventListener("astro:after-swap", applyTheme);
+    </script>
+
+    <style>
+      .backgrounds {
+        min-height: 100vh;
+        position: relative; /* Needed for pseudo-element positioning */
+        z-index: 0; /* Ensure content is above background */
+        overflow: hidden; /* To contain blur effects if they go beyond bounds */
+
+        /* Apply the main background layer directly to .backgrounds */
+        background: var(--main-background-layer);
+        background-color: var(--final-background-color); /* Fallback */
+
+        background-position:
+          top center,
+          center;
+        background-size:
+          220px repeat,
+          cover; /* Noise size, main background covers */
+        background-repeat: repeat, no-repeat;
+        background-blend-mode: overlay, normal;
+      }
+
+      /* Pseudo-element for the Blurred Grid */
+      .backgrounds::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: var(--grid-image-layer);
+        background-size: 100px 100px; /* Size of each grid cell */
+        background-repeat: repeat; /* Repeat the grid pattern */
+
+        opacity: var(--grid-opacity);
+        filter: var(--grid-blur-amount);
+        -webkit-filter: var(--grid-blur-amount);
+        z-index: -1; /* Place behind the main .backgrounds content */
+      }
+
+      /* Original media query for forced colors */
+      @media (forced-colors: active) {
+        .backgrounds {
+          background-blend-mode: none;
+          --bg-gradient-size: none;
+        }
+      }
+    </style>
+  </body>
+</html>

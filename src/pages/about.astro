@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<BaseLayout title="About | Robert Stewart" description="About Robert Stewart">
+  <div class="stack gap-8">
+    <main class="wrapper about">
+      <Hero title="About Me">
+        <!-- <img
+          width="1253"
+          height="573"
+          src={possBack1.src}
+          alt="Robert Stewart at work "
+        /> -->
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            Hi, My name is Robert Stewart. I have a background is in computer
+            science as a whole, but software development is my focus. Although
+            rather new to this field, I have worked on various projects ranging
+            from web development to mobile applications. I enjoy learning new
+            technologies and applying them to real-world problems.
+          </p>
+          <p>
+            <!-- You can find me on <a href="https://github.com/"
+              >GitHub</a
+            > and <a href="https://www.linkedin.com/in/robert-stewart-m"
+              >LinkedIn</a
+            >. -->
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>
+            In 2022, I started my academic journey at Iowa Western Community
+            College, where I received an Associates degree in Computer
+            Programming. During my time there, I gained a solid foundation in
+            programming languages and software development principles. After
+            that, I transferred to Bellevue University where I completed my
+            Bachelor's degree in Software Development. Currently, I am working
+            on my graduate degree in Data Science. My goal is to apply my
+            software development skills to the field of data science where I can
+            bridge the two fields together and become a well-rounded developer.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">LinkedIn</h2>
+        <div class="content">
+          <p>
+            Visit my LinkedIn profile at <a
+              href="https://www.linkedin.com/in/robert-stewart-m"
+              >https://www.linkedin.com/in/robert-stewart-m</a
+            >
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Resume</h2>
+        <div class="content">
+          <p>
+            For a more detailed look at my experience, skills, and projects,
+            feel free to view or <a
+              href="/rstewart.tech/documents/Resume.pdf"
+              class="button"
+              download>download my resume.</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+    <ContactCTA />
+  </div>
+
+  <!-- <ContactCTA /> -->
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+
+    border-radius: 1.5rem;
+    max-width: 100%; /* Added to ensure responsiveness */
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    color: var(--gray-200);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>

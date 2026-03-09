@@ -1,0 +1,54 @@
+---
+import CallToAction from "./CallToAction.astro";
+import Icon from "./Icon.astro";
+---
+
+<aside class="contact-me reveal">
+  <h2>Let's connect!</h2>
+  <CallToAction href="mailto:robert.stewart.m@outlook.com">
+    Send me a message
+    <Icon icon="paper-plane-tilt" size="1.2em" />
+  </CallToAction>
+</aside>
+
+<style>
+  .contact-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .contact-me h2 {
+    font-size: var(--text-xl);
+    max-width: 25ch;
+    color: var(--gray-0);
+    line-height: 1.2;
+  }
+
+  @media (min-width: 50em) {
+    .contact-me {
+      padding: 6rem 2.5rem;
+      gap: 2.5rem;
+      max-width: 83rem;
+      margin-inline: auto;
+    }
+
+    .contact-me h2 {
+      font-size: var(--text-3xl);
+    }
+  }
+
+  @media (min-width: 1500px) {
+    .contact-me h2 {
+      font-size: var(--text-4xl);
+    }
+    .contact-me a {
+      padding: 1.5rem 2rem;
+      font-size: var(--text-lg);
+    }
+  }
+</style>

@@ -1,0 +1,137 @@
+---
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+// import Testimonials from "../components/Testimonials.astro";
+
+---
+
+<BaseLayout
+  title="Tutoring | Robert Stewart"
+  description="Learn more about Robert Stewart's background and experience in tutoring."
+>
+  <div class="stack gap-8">
+    <main class="wrapper about">
+      <Hero
+        title="Tutoring Services"
+        tagline=""
+      >
+        <!-- <img
+          width="1253"
+          height="573"
+          src={tutoringRobotPic.src}
+          alt="Robert Stewart at work with a colleague, illustrating a collaborative and engaging tutoring environment."
+        /> -->
+      </Hero>
+
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            My journey into tutoring stems from a deep passion for helping
+            others grasp complex concepts and achieve their academic goals. I
+            believe that a strong foundation in core subjects is crucial for
+            success, and I'm dedicated to providing personalized support
+            tailored to each student's unique learning style. My approach
+            focuses on building confidence and fostering a genuine understanding
+            of the material.
+          </p>
+          <p>
+            Throughout my academic career, I've consistently sought
+            opportunities to assist peers and younger students, recognizing the
+            positive impact that individualized attention can have. This
+            commitment led me to formal tutoring roles, where I developed
+            effective strategies for breaking down challenging topics into
+            manageable parts.
+          </p>
+          <p>
+            I'm particularly adept at creating an encouraging and interactive
+            learning environment, where questions are welcomed and mistakes are
+            seen as opportunities for growth. My aim is not just to provide
+            answers, but to equip students with the critical thinking skills and
+            problem-solving techniques they'll need to excel independently.
+          </p>
+        </div>
+        <h2 class="section-title">Experience</h2>
+        <div class="Experience content">
+          <p>
+            I have extensive experience tutoring students across various age
+            groups and academic levels, specializing in computer science. My
+            expertise includes preparing students for standardized tests,
+            improving grades in challenging courses, and fostering a deeper
+            understanding of foundational principles.
+          </p>
+          <p>
+            My tutoring methodology emphasizes active learning, where I guide
+            students through problems rather than simply providing solutions. I
+            utilize a range of resources and techniques, including interactive
+            exercises, real-world examples, visual aids, practice problems, to
+            ensure the material resonates with each individual. I'm committed to
+            making learning an enjoyable and rewarding experience.
+          </p>
+        </div>
+      </section>
+    </main>
+<ContactCTA />
+    <!-- <Testimonials /> -->
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
+
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    max-width: 100%; /* Added to ensure responsiveness */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-100);
+  }
+
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
+
+  .content {
+    grid-column: 2 / 4;
+  }
+
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
+
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
+
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
+
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
+
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
+</style>
