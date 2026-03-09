@@ -13,7 +13,7 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   devToolbar: { enabled: false },
   site: 'https://rs691.github.io/',
-   base: '/robert.stewart.dev/rstewart/',
+   base: '/robert.stewart.dev/',
   integrations: [react(), sitemap(), mdx()],
 
   vite: {
