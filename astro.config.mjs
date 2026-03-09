@@ -12,8 +12,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   devToolbar: { enabled: false },
-  site: 'https://rs691.github.io/',
-   base: '/rstewart/',
+  site: 'https://robert-stewart.dev',
   integrations: [react(), sitemap(), mdx()],
 
   vite: {

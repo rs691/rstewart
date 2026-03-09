@@ -2,7 +2,7 @@
 title: Capstone Project
 subtitle: My Final Undergraduate Project
 publishDate: 2022-03-02 00:00:00
-img: /rstewart/images/cap2.png
+img: /images/cap2.png
 img_alt: Django Resume Icon
 description:
 tags:
@@ -11,7 +11,7 @@ tags:
   - Project Management
   - Unit Testing
   - Kanban
-project_image: /rstewart/images/cap.png
+project_image: /images/cap.png
 project_image_alt: Django Snake HTMX Price Tool
 ---
 

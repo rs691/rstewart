@@ -4,12 +4,24 @@ import ThemeToggle from "../components/ThemeToggle.astro";
 import type { iconPaths } from "../components/IconPaths";
 
 /** Main menu items */
-const textLinks: { label: string; href: string }[] = [
-  { label: "Home", href: "/rstewart/" },
-  { label: "Projects", href: "/rstewart/projects" },
-  { label: "About", href: "/rstewart/about" },
-  { label: "Tutoring", href: "/tutoring" },
+const textLinks: { label: string; path: string }[] = [
+  { label: "Home", path: "/" },
+  { label: "Projects", path: "/projects" },
+  { label: "About", path: "/about" },
+  { label: "Tutoring", path: "/tutoring" },
 ];
+
+const withBase = (path: string) => {
+  const base = import.meta.env.BASE_URL;
+  return `${base}${path.replace(/^\//, "")}`;
+};
+
+const normalizePath = (path: string) => {
+  let normalized = path;
+  if (!normalized.startsWith("/")) normalized = `/${normalized}`;
+  if (!normalized.endsWith("/")) normalized = `${normalized}/`;
+  return normalized;
+};
 
 /** Icon links to social media */
 const iconLinks: {
@@ -31,11 +43,17 @@ const iconLinks: {
 ];
 
 /** Test if a link is pointing to the current page. */
-const isCurrentPage = (href: string) => {
-  let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
-  if (pathname.at(0) !== "/") pathname = "/" + pathname;
-  if (pathname.at(-1) !== "/") pathname += "/";
-  return pathname === href || (href !== "/" && pathname.startsWith(href));
+const isCurrentPage = (path: string) => {
+  const base = import.meta.env.BASE_URL;
+  let pathname = Astro.url.pathname;
+
+  if (base !== "/" && pathname.startsWith(base)) {
+    pathname = `/${pathname.slice(base.length)}`;
+  }
+
+  const current = normalizePath(pathname);
+  const target = normalizePath(path);
+  return current === target || (target !== "/" && current.startsWith(target));
 };
 ---
 
@@ -53,12 +71,12 @@ const isCurrentPage = (href: string) => {
   <noscript>
     <ul class="nav-items">
       {
-        textLinks.map(({ label, href }) => (
+        textLinks.map(({ label, path }) => (
           <li>
             <a
-              aria-current={isCurrentPage(href) ? "page" : null}
+              aria-current={isCurrentPage(path) ? "page" : null}
               class="link"
-              href={href}
+              href={withBase(path)}
             >
               {label}
             </a>
@@ -88,12 +106,12 @@ const isCurrentPage = (href: string) => {
   <div id="menu-content" hidden>
     <ul class="nav-items">
       {
-        textLinks.map(({ label, href }) => (
+        textLinks.map(({ label, path }) => (
           <li>
             <a
-              aria-current={isCurrentPage(href) ? "page" : null}
+              aria-current={isCurrentPage(path) ? "page" : null}
               class="link"
-              href={href}
+              href={withBase(path)}
             >
               {label}
             </a>

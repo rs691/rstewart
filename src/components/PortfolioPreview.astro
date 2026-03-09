@@ -10,7 +10,7 @@ const { data, id } = Astro.props.project;
 
 <div class="portfolio-preview">
 	<span class="title">{data.title}</span>
-	<a class="card" href={`/rstewart/work/${id}`}>
+	<a class="card" href={`${import.meta.env.BASE_URL}work/${id}`}>
 		<img
 			src={data.img}
 			alt={data.img_alt || ""}
