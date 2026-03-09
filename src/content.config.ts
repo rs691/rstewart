@@ -7,7 +7,7 @@ import { defineCollection, z } from 'astro:content';
 
 export const collections = {
   work: defineCollection({
-    loader: glob({ base: '../rstewart.tech/src/content/work', pattern: ['**/*.md', '**/*.mdx'] }),
+    loader: glob({ base: '../rstewart/src/content/work', pattern: ['**/*.md', '**/*.mdx'] }),
     // When using content, the loader is automatically set to glob
     // type: 'content', // 'content' for Markdown/MDX. Use 'data' for JSON/YAML
   }),
