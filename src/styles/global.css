@@ -7,8 +7,8 @@
 */
 
 :root {
-  /* Colors */
-  --gray-0: #ffffff;
+  /* Colors - DARK THEME (Default) */
+  --gray-0: #fefefe;
   --gray-50: #f3f4f7;
   --gray-100: #e3e6ee;
   --gray-200: #c3cadb;
@@ -29,12 +29,12 @@
   --accent-dark: #1c0056;
   --accent-overlay: hsla(280, 89%, 67%, 0.33);
   --accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
-  --accent-text-over: var(--gray-0);
+  --accent-text-over: #ffffff;
 
-  --star-purple-glow: radial-gradient(circle, #fbc2eb 0%, #a6c1ee 100%);
-  --star-pink-glow: radial-gradient(circle, #fbc2eb 0%, #f68084 100%);
-  --star-purple-accent: radial-gradient(circle, #c561f6 0%, #7611a6 100%);
-  --star-pink-accent: radial-gradient(circle, #fbc2eb 0%, #f68084 100%);
+  --star-purple-glow: radial-gradient(circle, #7611a6 0%, #1c0056 100%);
+  --star-pink-glow: radial-gradient(circle, #f68084 0%, #a60056 100%);
+  --star-purple-accent: radial-gradient(circle, #7611a6 0%, #1c0056 100%);
+  --star-pink-accent: radial-gradient(circle, #a60056 0%, #4c11c6 100%);
   /*borders*/
   --border-color: var(--gray-800);
   --border-radius: 0.5rem;
@@ -46,7 +46,7 @@
   --shadow-color-2: var(--accent-regular);
   --shadow-color-3: var(--accent-light);
 
-  --link-color: var(--accent-dark);
+  --link-color: var(--accent-light);
 
   /* Backgrounds */
   --bg-scale: 1;
@@ -202,18 +202,18 @@
 }
 
 :root.theme-dark {
-  /* Add an image as the dark mode background*/
-  --gray-0: #090b11;
-  --gray-50: #141925;
-  --gray-100: #283044;
-  --gray-200: #3d4663;
-  --gray-300: #505d84;
-  --gray-400: #6474a2;
-  --gray-500: #8490b5;
-  --gray-600: #a3acc8;
-  --gray-700: #c3cadb;
-  --gray-800: #e3e6ee;
-  --gray-900: #f3f4f7;
+  /* SOFT LIGHT THEME - Lavender Gray */
+  --gray-0: #1a1a1a;
+  --gray-50: #2d2d2d;
+  --gray-100: #3d4663;
+  --gray-200: #505d84;
+  --gray-300: #6474a2;
+  --gray-400: #8490b5;
+  --gray-500: #a3acc8;
+  --gray-600: #c3cadb;
+  --gray-700: #d8d2e8;
+  --gray-800: #e8e4f0;
+  --gray-900: #f4f1f8;
   --gray-999-basis: 0, 0%, 100%;
   --gray-999: #ffffff;
 
@@ -226,12 +226,12 @@
   --accent-dark: #1c0056;
   --accent-overlay: hsla(280, 89%, 67%, 0.33);
   --accent-subtle-overlay: var(--accent-overlay);
-  --accent-text-over: var(--gray-999);
+  --accent-text-over: #ffffff;
 
-  --star-purple-glow: radial-gradient(circle, #7611a6 0%, #1c0056 100%);
-  --star-pink-glow: radial-gradient(circle, #f68084 0%, #a60056 100%);
-  --star-purple-accent: radial-gradient(circle, #7611a6 0%, #1c0056 100%);
-  --star-pink-accent: radial-gradient(circle, #a60056 0%, #4c11c6 100%);
+  --star-purple-glow: radial-gradient(circle, #fbc2eb 0%, #a6c1ee 100%);
+  --star-pink-glow: radial-gradient(circle, #fbc2eb 0%, #f68084 100%);
+  --star-purple-accent: radial-gradient(circle, #c561f6 0%, #7611a6 100%);
+  --star-pink-accent: radial-gradient(circle, #fbc2eb 0%, #f68084 100%);
 
   --link-color: var(--accent-regular);
   --link-hover-color: var(--accent-light);
@@ -242,8 +242,8 @@
   --bg-image-subtle-2: none;
   --bg-gradient-size: 100%;
   --bg-blend-mode: normal;
-  --main-background-layer: linear-gradient(160deg, #f5f0ff 0%, #fdfcff 100%);
-  --final-background-color: #f5f0ff;
+  --main-background-layer: linear-gradient(160deg, #e9e4f0 0%, #f4f1f8 100%);
+  --final-background-color: #e9e4f0;
   --grid-image-layer: none;
   --grid-opacity: 0;
   --grid-blur-amount: 0px;

@@ -36,11 +36,17 @@ const { data, id } = Astro.props.project;
 		font-family: var(--font-brand);
 		font-size: var(--text-lg);
 		font-weight: 500;
+		width: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	.card {
 		display: grid;
-		height: 10rem;
+		grid-template-rows: 1fr;
+		aspect-ratio: 16 / 9;
+		height: auto;
 		background: var(--gradient-subtle);
 		border: 2px solid var(--gray-700);
 		border-radius: 0.75rem;
@@ -68,7 +74,8 @@ const { data, id } = Astro.props.project;
 
 	@media (min-width: 50em) {
 		.card {
-			height: 22rem;
+			aspect-ratio: 16 / 9;
+			height: auto;
 			border-radius: 1.5rem;
 		}
 

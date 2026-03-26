@@ -133,6 +133,16 @@ const { Content } = await render(entry);
     box-shadow: var(--shadow-lg);
     background: var(--gradient-subtle);
     border: 2px solid var(--gray-700);
+    display: block;
+    margin-inline: auto;
+    max-width: 90%;
+    height: auto;
+  }
+
+  @media (min-width: 50em) {
+    .content :global(img) {
+      max-width: 45%;
+    }
   }
 
   .content :global(blockquote) {
