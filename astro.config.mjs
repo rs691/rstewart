@@ -14,7 +14,6 @@ export default defineConfig({
   devToolbar: { enabled: false },
   site: 'https://robert-stewart.dev',
   integrations: [react(), sitemap(), mdx()],
-
   vite: {
     plugins: [tailwindcss()]
   }

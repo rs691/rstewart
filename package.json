@@ -9,20 +9,22 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.2.1",
-    "astro": "^5.17.1",
-    "canvas-confetti": "^1.9.3",
-    "tailwindcss": "^4.2.1",
-     "@astrojs/mdx": "^4.3.0",
+    "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
     "@astrojs/sitemap": "^3.4.0",
+    "@heroui/react": "^3.0.2",
+    "@tailwindcss/vite": "^4.2.1",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
+    "astro": "^5.17.1",
+    "canvas-confetti": "^1.9.3",
     "clsx": "^2.1.1",
+    "lucide-react": "^1.8.0",
     "motion": "^12.23.15",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwind-merge": "^3.3.1"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
