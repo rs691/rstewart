@@ -279,9 +279,9 @@ function App() {
         <footer className="py-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-xs font-mono tracking-widest uppercase">
           <p>© 2026. ALL SYSTEMS NOMINAL.</p>
           <div className="flex items-center gap-8">
-            <a href="#" className="hover:text-white transition-all">GITHUB</a>
+            <a href="https://github.com/rs691" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">GITHUB</a>
             <a href="https://www.linkedin.com/in/robert-stewart-m" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all text-yellow-500/80">LINKEDIN</a>
-            <a href="#" className="hover:text-white transition-all">X (TWITTER)</a>
+            <a href="https://bellevue.joinhandshake.com/profiles/robertstewart" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">HANDSHAKE</a>
           </div>
         </footer>
       </main>

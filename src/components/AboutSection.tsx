@@ -10,9 +10,9 @@ const stats = [
 ];
 
 const education = [
-  { degree: "M.S. Data Science",        school: "Bellevue University",          years: "2025 – 2027", active: true  },
+  { degree: "M.S. Data Science",        school: "Bellevue University",          years: "Expected 2027", active: true  },
   { degree: "B.S. Software Development", school: "Bellevue University",          years: "2022 – 2025", active: false },
-  { degree: "A.S. Computer Programming", school: "Iowa Western C.C.",            years: "2019 – 2022", active: false },
+  { degree: "A.A. Computer Science",    school: "Iowa Western C.C.",            years: "2019 – 2022", active: false },
 ];
 
 const awards = ["Omega Nu Lambda", "Gottsch Scholarship", "DREAM Scholarship"];
@@ -97,14 +97,13 @@ export const AboutSection = () => {
               <p className="text-base text-white/70 font-light leading-relaxed">
                 I'm a full-stack engineer who builds production systems — the kind that handle real users,
                 real data, and real scale. At NE Innovation Labs, I architected a multi-tenant,
-                location-based mobile commerce platform from the ground up: Flutter and Serverpod
-                on the backend, PostGIS for geospatial queries, Redis for real-time pub/sub, and
-                AWS ECS for containerized infrastructure.
+                location-based mobile commerce platform from the ground up: Flutter and Node.js
+                on the backend, MySQL for data persistence, and AWS ECS for containerized infrastructure.
               </p>
 
               <p className="text-base text-white/70 font-light leading-relaxed">
-                I spent two years mentoring 100+ students at Bellevue University, which sharpened
-                how I communicate complex systems and made me a stronger collaborator. Currently
+                I spent two years mentoring 100+ students at Bellevue University, improving
+                outcomes by 20% through structured reviews and system design guidance. Currently
                 pursuing my M.S. in Data Science — bridging engineering with machine learning
                 and intelligent, data-driven systems.
               </p>
