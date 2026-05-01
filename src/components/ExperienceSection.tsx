@@ -76,7 +76,7 @@ export const ExperienceSection = () => {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="h-px w-8 bg-yellow-500/40"></span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
               03 // DEPLOYMENT_LOG
             </span>
             <span className="h-px w-8 bg-yellow-500/40"></span>
@@ -122,7 +122,7 @@ export const ExperienceSection = () => {
                   {job.active && (
                     <div className="absolute top-8 right-8 flex items-center gap-2 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
                       <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
-                      <span className="text-[9px] font-mono text-yellow-500 uppercase tracking-widest font-bold">ACTIVE_NODE</span>
+                      <span className="text-[10px] font-mono text-yellow-500 uppercase tracking-widest font-bold">ACTIVE_NODE</span>
                     </div>
                   )}
 
@@ -156,7 +156,7 @@ export const ExperienceSection = () => {
                       {job.tags.map((tag, idx) => (
                         <span 
                           key={idx} 
-                          className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-[10px] font-mono text-white/40 uppercase tracking-widest hover:border-yellow-500/30 hover:text-yellow-400/80 transition-all"
+                          className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-xs font-mono text-white/40 uppercase tracking-widest hover:border-yellow-500/30 hover:text-yellow-400/80 transition-all"
                         >
                           {tag}
                         </span>

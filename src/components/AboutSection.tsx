@@ -44,7 +44,7 @@ export const AboutSection = () => {
         >
           <div className="flex items-center gap-3 mb-4">
             <span className="h-px w-8 bg-yellow-500/40"></span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
               01 // SYSTEM_PROFILE
             </span>
             <span className="h-px w-8 bg-yellow-500/40"></span>
@@ -67,7 +67,7 @@ export const AboutSection = () => {
               <span className="text-3xl md:text-4xl font-bold tracking-tight text-white group-hover:text-yellow-400 transition-colors mb-1">
                 {stat.value}
               </span>
-              <span className="font-mono text-[10px] uppercase tracking-widest text-white/40 font-medium font-mono lowercase">
+              <span className="font-mono text-xs uppercase tracking-widest text-white/40 font-medium font-mono lowercase">
                 {stat.label}
               </span>
             </motion.div>
@@ -110,11 +110,11 @@ export const AboutSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-[11px] uppercase tracking-wider font-medium">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-xs uppercase tracking-wider font-medium">
                 <MapPin className="w-3.5 h-3.5 text-yellow-500/70" />
                 Council Bluffs, IA
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-[11px] uppercase tracking-wider font-medium">
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-xs uppercase tracking-wider font-medium">
                 <Layers className="w-3.5 h-3.5 text-yellow-500/70" />
                 Open to Remote
               </div>
@@ -158,7 +158,7 @@ export const AboutSection = () => {
                           {edu.degree}
                         </span>
                         {edu.active && (
-                          <span className="px-1.5 py-0.5 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-[9px] text-yellow-500 font-mono uppercase tracking-widest">
+                          <span className="px-1.5 py-0.5 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-[10px] text-yellow-500 font-mono uppercase tracking-widest">
                             In Progress
                           </span>
                         )}

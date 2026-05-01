@@ -19,6 +19,8 @@
 
   --sans: "Outfit", "Inter", system-ui, -apple-system, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
+  /* Add the font Anybody */
+  --anybody: "Anybody", "Outfit", "Inter", system-ui, -apple-system, sans-serif;
 }
 
 * {
@@ -29,7 +31,8 @@ body {
   margin: 0;
   background-color: #09090b; /* Deep Black */
   color: #FFFFFF;
-  font-family: var(--sans);
+  font-family: var(--anybody);
+  line-height: 1.55;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -56,3 +59,4 @@ body {
   background: rgba(234, 179, 8, 0.3);
   color: #fef08a;
 }
+
