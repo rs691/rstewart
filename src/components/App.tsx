@@ -64,6 +64,8 @@ const TypewriterCode = () => {
 };
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-[#09090b] text-white selection:bg-yellow-500/30 selection:text-yellow-200">
       <div 
@@ -81,7 +83,7 @@ function App() {
             SOFTWARE DEVELOPER <span className="text-xs text-yellow-500/80">v2025.05.21</span>
           </span>
         </div>
-        <div className="flex items-center gap-8 text-sm font-mono uppercase tracking-widest text-white/50">
+        <div className="hidden md:flex items-center gap-8 text-sm font-mono uppercase tracking-widest text-white/50">
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#skills" className="hover:text-white transition-colors">Stack</a>
           <a href="#experience" className="hover:text-white transition-colors">Experience</a>
@@ -93,11 +95,42 @@ function App() {
             Contact
           </Button>
         </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden">
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setMobileMenuOpen((s) => !s)}
+            className="inline-flex items-center justify-center p-2 rounded-md border border-white/8 bg-[#0b0b0c]/60"
+          >
+            <span className="sr-only">Open main menu</span>
+            <svg className="w-6 h-6 text-white/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile nav panel */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 z-40 bg-[#09090b]/95 border-b border-white/6 backdrop-blur-sm">
+          <div className="flex flex-col items-center gap-3 py-4 text-white/80 font-mono uppercase tracking-wider">
+            <a href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">About</a>
+            <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Stack</a>
+            <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Experience</a>
+            <a href="#methodology" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Methodology</a>
+            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 hover:text-yellow-400 w-full text-center border-t border-white/6">Contact</a>
+          </div>
+        </div>
+      )}
 
       <main className="max-w-7xl mx-auto px-6 overflow-hidden min-h-screen flex flex-col justify-center relative z-10">
         {/* Hero Section */}
-        <section className="relative pt-12 pb-24 flex flex-col items-center text-center">
+        <section className="relative pt-8 sm:pt-12 pb-12 sm:pb-24 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -134,7 +167,7 @@ function App() {
 
               {/* Subtle pulsing ring */}
               <motion.div 
-                className="absolute -inset-2 rounded-full border border-white/5 z-0"
+                className="absolute -inset-3 rounded-full border border-white/5 z-0"
                 animate={{ scale: [1, 1.05, 1], opacity: [0.1, 0.2, 0.1] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -142,7 +175,7 @@ function App() {
               <img 
                 src="/images/profile1.png" 
                 alt="Profile" 
-                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-2 border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500 z-10"
+                className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover border-2 border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500 z-10"
               />
             </div>
 
@@ -156,11 +189,10 @@ function App() {
               </span>
             </div>
             
-            <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-8 bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent uppercase">
+            <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-8 bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent uppercase">
               ROBERT <br className="hidden md:block" /> STEWART
             </h1>
-            
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/50 font-light leading-relaxed">
+            <p className="max-w-2xl mx-auto text-base md:text-lg lg:text-xl text-white/50 font-light leading-relaxed">
               Software Developer focused on building <span className="text-white/80 font-normal">robust architectures</span> and exploring the intersection 
               of traditional development and <span className="text-yellow-500/80 font-normal">agent-based automation</span>.
             </p>
@@ -261,7 +293,7 @@ function App() {
             viewport={{ once: true }}
             className="relative group aspect-square lg:aspect-video rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-br from-yellow-500/10 to-[#16171D]"
           >
-            <div className="absolute inset-x-0 bottom-0 p-8 pt-24 bg-gradient-to-t from-[#16171D] via-[#16171D]/60 to-transparent">
+            <div className="absolute inset-x-0 bottom-0 p-8 pt-24 bg-linear-to-t from-[#16171D] via-[#16171D]/60 to-transparent">
               <div className="flex items-center gap-3 mb-2">
                 <Cpu className="w-5 h-5 text-yellow-400" />
                 <span className="text-xs font-mono uppercase tracking-widest text-white/50">System Diagnostics</span>

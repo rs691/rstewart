@@ -60,3 +60,24 @@ body {
   color: #fef08a;
 }
 
+/* Reduce the visible top "gray box" produced by the
+   .with-background::before pseudo-element on narrower viewports.
+   This adjusts the vertical translation so the band doesn't sit
+   so far down on medium / small screens (e.g., 873px wide). */
+.with-background::before {
+  /* lift the background up so the solid gray band sits off-screen,
+     keep it subtle with reduced opacity */
+  top: -12vh !important;
+  transform: translateY(-55%) translateX(-50%);
+  opacity: 0.36 !important;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .with-background::before {
+    top: -20vh !important;
+    transform: translateY(-65%) translateX(-50%) !important;
+    opacity: 0.18 !important;
+  }
+}
+
