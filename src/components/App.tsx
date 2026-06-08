@@ -5,6 +5,7 @@ import { OrchestrationGrid } from "./OrchestrationGrid";
 import { SkillShowcase } from "./SkillShowcase";
 import { AboutSection } from "./AboutSection";
 import { ExperienceSection } from "./ExperienceSection";
+import { ProjectsSection } from "./ProjectsSection";
 import { Cpu, Terminal, BrainCircuit } from "lucide-react";
 
 const TypewriterCode = () => {
@@ -49,7 +50,7 @@ const TypewriterCode = () => {
   }, [charIndex, lineIndex]);
 
   return (
-    <div className="mt-4 p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-xs sm:text-sm text-yellow-500/60 min-h-[120px] backdrop-blur-sm shadow-inner group-hover:border-yellow-500/20 transition-colors">
+    <div className="mt-4 p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-sm sm:text-sm text-yellow-500/60 min-h-[120px] backdrop-blur-sm shadow-inner group-hover:border-yellow-500/20 transition-colors">
       <div className="flex gap-1.5 mb-3 opacity-30">
         <div className="w-2 h-2 rounded-full bg-red-500" />
         <div className="w-2 h-2 rounded-full bg-yellow-500" />
@@ -76,7 +77,7 @@ function App() {
       <OrchestrationGrid />
       
       {/* Navigation Header */}
-      <nav className="sticky top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
         <div className="flex items-center gap-2 min-w-0">
           <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 shrink-0" />
           <span className="font-mono text-[10px] sm:text-xs md:text-sm tracking-widest text-white/90 uppercase pt-0.5 truncate">
@@ -84,14 +85,16 @@ function App() {
             <span className="text-yellow-500/80">v2026.05.02</span>
           </span>
         </div>
-        <div className="flex items-center gap-8 text-sm font-mono uppercase tracking-widest text-white/50">
+        <div className="hidden md:flex items-center gap-8 text-sm font-mono uppercase tracking-widest text-white/50">
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#skills" className="hover:text-white transition-colors">Stack</a>
           <a href="#experience" className="hover:text-white transition-colors">Experience</a>
+          <a href="#projects" className="hover:text-white transition-colors">Projects</a>
           <a href="#methodology" className="hover:text-white transition-colors">Methodology</a>
           <Button 
             className="h-8 px-4 font-mono text-xs tracking-widest uppercase border border-white/10 hover:bg-white/5 transition-all text-white hover:text-yellow-400 hover:border-yellow-500/50"
             variant="ghost"
+            onClick={() => window.location.href = "mailto:rms.dev@outlook.com"}
           >
             Contact
           </Button>
@@ -123,8 +126,9 @@ function App() {
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">About</a>
             <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Stack</a>
             <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Experience</a>
+            <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Projects</a>
             <a href="#methodology" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Methodology</a>
-            <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 hover:text-yellow-400 w-full text-center border-t border-white/6">Contact</a>
+            <a href="mailto:rms.dev@outlook.com" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 hover:text-yellow-400 w-full text-center border-t border-white/6">Contact</a>
           </div>
         </div>
       )}
@@ -191,7 +195,7 @@ function App() {
             </div>
             
             <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-8 bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent uppercase">
-              ROBERT <br className="hidden md:block" /> STEWART
+              ROBERT <br className="block sm:hidden md:block" /> STEWART
             </h1>
             
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/50 font-light leading-relaxed">
@@ -237,6 +241,9 @@ function App() {
         {/* Experience Section */}
         <ExperienceSection />
 
+        {/* Projects Section */}
+        <ProjectsSection />
+
         {/* Core Methodology Section */}
         <section id="methodology" className="py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-t border-white/5 relative overflow-hidden scroll-mt-24">
           {/* Section Diagnostic Pulse */}
@@ -259,7 +266,7 @@ function App() {
             <div className="flex items-center gap-3 mb-2">
               <span className="h-px w-8 bg-yellow-500/40"></span>
               <span className="font-mono text-xs uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
-                04 // METHODOLOGY
+                05 // METHODOLOGY
               </span>
               <span className="h-px w-8 bg-yellow-500/40"></span>
             </div>
@@ -312,7 +319,8 @@ function App() {
         {/* Footer */}
         <footer id="contact" className="py-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm font-mono tracking-widest uppercase scroll-mt-24">
           <p>© 2026. ALL SYSTEMS NOMINAL.</p>
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+            <a href="mailto:rms.dev@outlook.com" className="hover:text-white transition-all">EMAIL</a>
             <a href="https://github.com/rs691" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">GITHUB</a>
             <a href="https://www.linkedin.com/in/robert-stewart-m" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all text-yellow-500/80">LINKEDIN</a>
             <a href="https://bellevue.joinhandshake.com/profiles/robertstewart" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">HANDSHAKE</a>

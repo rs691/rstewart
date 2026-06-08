@@ -82,7 +82,7 @@ export const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="p-8 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col gap-6 backdrop-blur-sm hover:border-white/10 transition-colors"
+            className="p-5 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col gap-6 backdrop-blur-sm hover:border-white/10 transition-colors"
           >
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
@@ -127,7 +127,7 @@ export const AboutSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="p-8 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col gap-8 backdrop-blur-sm hover:border-white/10 transition-colors"
+            className="p-5 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col gap-8 backdrop-blur-sm hover:border-white/10 transition-colors"
           >
             {/* Education section */}
             <div className="flex flex-col gap-6">

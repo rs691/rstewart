@@ -39,7 +39,7 @@ const jobs = [
     type: "Full-Time",
     active: false,
     bullets: [
-      "Built internal tools for cost estimation and operations, reducing manual workload by 40%.",
+      "Built web-based cost estimation tool using Laravel and MySQL, automating quote generation and reducing manual workload by 40%.",
       "Developed and deployed a ticket management system using Laravel with Azure CI/CD pipelines.",
       "Collaborated across the full SDLC from requirements through production deployment.",
     ],
@@ -52,10 +52,10 @@ const jobs = [
     type: "Full-Time",
     active: false,
     bullets: [
-      "Diagnosed and resolved hardware, software, and network issues — maintained high system reliability.",
-      "Streamlined onboarding workflows and technical documentation, reducing support overhead.",
+      "Resolved complex technical issues and improved system reliability by leveraging CrowdStrike Falcon for proactive threat detection and real-time endpoint monitoring.",
+      "Streamlined onboarding and documentation using JumpCloud, automating user provisioning and directory services to reduce support overhead by 50%.",
     ],
-    tags: ["IT Support", "Networking", "Documentation"],
+    tags: ["CrowdStrike Falcon", "JumpCloud", "Networking", "IT Support"],
   },
 ];
 
@@ -117,7 +117,7 @@ export const ExperienceSection = () => {
                 </div>
 
                 {/* Job Card */}
-                <div className="group/card relative p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500">
+                <div className="group/card relative p-5 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500">
                   {/* Status Indicator for Active Role */}
                   <div className="flex flex-col gap-6">
                     <div>
