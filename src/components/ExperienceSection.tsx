@@ -61,7 +61,7 @@ const jobs = [
 
 export const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 border-t border-white/5 relative overflow-hidden group">
+    <section id="experience" className="py-20 border-t border-white/5 relative overflow-hidden group scroll-mt-24">
       {/* Background Decorative Element */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-yellow-500/5 to-transparent pointer-events-none" />
       
@@ -119,17 +119,16 @@ export const ExperienceSection = () => {
                 {/* Job Card */}
                 <div className="group/card relative p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500">
                   {/* Status Indicator for Active Role */}
-                  {job.active && (
-                    <div className="absolute top-8 right-8 flex items-center gap-2 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
-                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
-                      <span className="text-[10px] font-mono text-yellow-500 uppercase tracking-widest font-bold">ACTIVE_NODE</span>
-                    </div>
-                  )}
-
                   <div className="flex flex-col gap-6">
                     <div>
-                      <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-1 group-hover/card:text-yellow-400 transition-colors">
+                      <h3 className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xl md:text-2xl font-bold tracking-tight text-white mb-1 group-hover/card:text-yellow-400 transition-colors">
                         {job.title}
+                        {job.active && (
+                          <div className="inline-flex w-fit items-center gap-2 px-2.5 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20">
+                            <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 animate-pulse" />
+                            <span className="text-[10px] font-mono text-yellow-500 uppercase tracking-widest font-bold">ACTIVE_NODE</span>
+                          </div>
+                        )}
                       </h3>
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm font-mono text-white/40 uppercase tracking-widest mt-2">
                         <span className="flex items-center gap-1.5">

@@ -76,14 +76,15 @@ function App() {
       <OrchestrationGrid />
       
       {/* Navigation Header */}
-      <nav className="sticky top-0 z-50 px-6 py-4 flex items-center justify-between border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
-        <div className="flex items-center gap-2">
-          <Terminal className="w-6 h-6 text-yellow-400" />
-          <span className="font-mono text-sm tracking-widest text-white/90 uppercase pt-0.5">
-            SOFTWARE DEVELOPER <span className="text-xs text-yellow-500/80">v2025.05.21</span>
+      <nav className="sticky top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
+        <div className="flex items-center gap-2 min-w-0">
+          <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 shrink-0" />
+          <span className="font-mono text-[10px] sm:text-xs md:text-sm tracking-widest text-white/90 uppercase pt-0.5 truncate">
+            <span className="hidden min-[400px]:inline">SOFTWARE </span>DEVELOPER{" "}
+            <span className="text-yellow-500/80">v2026.05.02</span>
           </span>
         </div>
-        <div className="hidden md:flex items-center gap-8 text-sm font-mono uppercase tracking-widest text-white/50">
+        <div className="flex items-center gap-8 text-sm font-mono uppercase tracking-widest text-white/50">
           <a href="#about" className="hover:text-white transition-colors">About</a>
           <a href="#skills" className="hover:text-white transition-colors">Stack</a>
           <a href="#experience" className="hover:text-white transition-colors">Experience</a>
@@ -128,9 +129,9 @@ function App() {
         </div>
       )}
 
-      <main className="max-w-7xl mx-auto px-6 overflow-hidden min-h-screen flex flex-col justify-center relative z-10">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 overflow-x-hidden min-h-screen flex flex-col relative z-10">
         {/* Hero Section */}
-        <section className="relative pt-8 sm:pt-12 pb-12 sm:pb-24 flex flex-col items-center text-center">
+        <section className="relative pt-12 pb-24 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -175,24 +176,25 @@ function App() {
               <img 
                 src="/images/profile1.png" 
                 alt="Profile" 
-                className="relative w-36 h-36 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover border-2 border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500 z-10"
+                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-2 border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500 z-10"
               />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/5 border border-yellow-500/10 mb-8">
-              <span className="relative flex h-2 w-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/5 border border-yellow-500/10 mb-6 sm:mb-8 max-w-[95vw]">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
               </span>
-              <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.2em] text-yellow-300">
-                System Online: Version 2026.04.04
+              <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-yellow-300 text-left">
+                System Online: Build 2026.05.02
               </span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-8 bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent uppercase">
+            <h1 className="text-5xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] mb-8 bg-gradient-to-b from-white via-white to-white/40 bg-clip-text text-transparent uppercase">
               ROBERT <br className="hidden md:block" /> STEWART
             </h1>
-            <p className="max-w-2xl mx-auto text-base md:text-lg lg:text-xl text-white/50 font-light leading-relaxed">
+            
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/50 font-light leading-relaxed">
               Software Developer focused on building <span className="text-white/80 font-normal">robust architectures</span> and exploring the intersection 
               of traditional development and <span className="text-yellow-500/80 font-normal">agent-based automation</span>.
             </p>
@@ -203,7 +205,7 @@ function App() {
         <AboutSection />
 
         {/* Skill Showcase */}
-        <section id="skills" className="py-20 border-t border-white/5 relative overflow-hidden">
+        <section id="skills" className="py-20 border-t border-white/5 relative overflow-hidden scroll-mt-24">
           {/* Section Diagnostic Pulse */}
           <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
             <motion.div 
@@ -236,7 +238,7 @@ function App() {
         <ExperienceSection />
 
         {/* Core Methodology Section */}
-        <section id="methodology" className="py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-t border-white/5 relative overflow-hidden">
+        <section id="methodology" className="py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center border-t border-white/5 relative overflow-hidden scroll-mt-24">
           {/* Section Diagnostic Pulse */}
           <div className="absolute inset-x-0 top-1/4 h-px z-0 pointer-events-none opacity-20">
              <motion.div 
@@ -308,7 +310,7 @@ function App() {
         </section>
 
         {/* Footer */}
-        <footer className="py-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm font-mono tracking-widest uppercase">
+        <footer id="contact" className="py-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm font-mono tracking-widest uppercase scroll-mt-24">
           <p>© 2026. ALL SYSTEMS NOMINAL.</p>
           <div className="flex items-center gap-8">
             <a href="https://github.com/rs691" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">GITHUB</a>

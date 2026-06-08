@@ -19,7 +19,7 @@ const awards = ["Omega Nu Lambda", "Gottsch Scholarship", "DREAM Scholarship"];
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-20 border-t border-white/5 relative overflow-hidden group">
+    <section id="about" className="py-20 border-t border-white/5 relative overflow-hidden group scroll-mt-24">
       {/* Ambient scan line simulated with framer-motion */}
       <motion.div 
         className="absolute inset-0 pointer-events-none z-0 overflow-hidden"
@@ -67,7 +67,7 @@ export const AboutSection = () => {
               <span className="text-3xl md:text-4xl font-bold tracking-tight text-white group-hover:text-yellow-400 transition-colors mb-1">
                 {stat.value}
               </span>
-              <span className="font-mono text-xs uppercase tracking-widest text-white/40 font-medium font-mono lowercase">
+              <span className="font-mono text-xs lowercase tracking-widest text-white/40 font-medium text-center">
                 {stat.label}
               </span>
             </motion.div>
@@ -110,12 +110,12 @@ export const AboutSection = () => {
             </div>
 
             <div className="flex flex-wrap gap-3 pt-2">
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-xs uppercase tracking-wider font-medium">
-                <MapPin className="w-3.5 h-3.5 text-yellow-500/70" />
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-[10px] sm:text-xs uppercase tracking-wider font-medium">
+                <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-500/70" />
                 Council Bluffs, IA
               </div>
-              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-xs uppercase tracking-wider font-medium">
-                <Layers className="w-3.5 h-3.5 text-yellow-500/70" />
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-[10px] sm:text-xs uppercase tracking-wider font-medium">
+                <Layers className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-500/70" />
                 Open to Remote
               </div>
             </div>
