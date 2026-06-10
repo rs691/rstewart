@@ -117,8 +117,6 @@ function App() {
             </svg>
           </button>
         </div>
-      </nav>
-
       {/* Mobile nav panel */}
       {mobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 z-40 bg-[#09090b]/95 border-b border-white/6 backdrop-blur-sm">
@@ -132,6 +130,7 @@ function App() {
           </div>
         </div>
       )}
+      </nav>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 overflow-x-hidden min-h-screen flex flex-col relative z-10">
         {/* Hero Section */}
