@@ -3,9 +3,9 @@ import { Code2, Globe, Smartphone, BrainCircuit } from "lucide-react";
 
 const SKILLS = [
   { name: "AI Agent Orchestration", icon: BrainCircuit, color: "text-amber-400" },
-  { name: "Software Development", icon: Code2, color: "text-yellow-400" },
+  { name: "Software Development", icon: Code2, color: "text-emerald-400" },
   { name: "Web Development", icon: Globe, color: "text-orange-400" },
-  { name: "Mobile Development", icon: Smartphone, color: "text-yellow-500" },
+  { name: "Mobile Development", icon: Smartphone, color: "text-emerald-500" },
 ];
 
 const TECH_CATEGORIES = [
@@ -42,9 +42,9 @@ export const SkillShowcase = () => {
             whileHover={{ scale: 1.05, translateY: -5 }}
             className="group relative flex flex-col items-center p-5 sm:p-8 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm transition-all hover:bg-white/[0.08]"
           >
-            <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-yellow-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-emerald-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
             
-            <div className={`p-4 rounded-xl bg-white/5 mb-4 group-hover:ring-2 group-hover:ring-yellow-500/50 transition-all`}>
+            <div className={`p-4 rounded-xl bg-white/5 mb-4 group-hover:ring-2 group-hover:ring-emerald-500/50 transition-all`}>
               <skill.icon className={`w-8 h-8 ${skill.color}`} />
             </div>
             
@@ -52,7 +52,7 @@ export const SkillShowcase = () => {
               {skill.name}
             </h3>
             
-            <div className="h-1 w-0 bg-yellow-500 group-hover:w-full transition-all duration-300 rounded-full" />
+            <div className="h-1 w-0 bg-emerald-500 group-hover:w-full transition-all duration-300 rounded-full" />
           </motion.div>
         ))}
       </div>
@@ -75,7 +75,7 @@ export const SkillShowcase = () => {
               {category.skills.map((skill) => (
                 <span 
                   key={skill} 
-                  className="px-3 py-1.5 rounded-lg border border-white/5 bg-white/5 text-sm font-light text-white/70 hover:text-yellow-400 hover:border-yellow-500/30 transition-colors"
+                  className="px-3 py-1.5 rounded-lg border border-white/5 bg-white/5 text-sm font-light text-white/70 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
                 >
                   {skill}
                 </span>

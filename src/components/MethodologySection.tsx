@@ -44,15 +44,15 @@ const TypewriterCode = () => {
   }, [charIndex, lineIndex]);
 
   return (
-    <div className="mt-4 p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-[10px] text-yellow-500/60 min-h-[120px] backdrop-blur-sm shadow-inner group-hover:border-yellow-500/20 transition-colors">
+    <div className="mt-4 p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-[10px] text-emerald-500/60 min-h-[120px] backdrop-blur-sm shadow-inner group-hover:border-emerald-500/20 transition-colors">
       <div className="flex gap-1.5 mb-3 opacity-30">
         <div className="w-2 h-2 rounded-full bg-red-500" />
-        <div className="w-2 h-2 rounded-full bg-yellow-500" />
+        <div className="w-2 h-2 rounded-full bg-emerald-500" />
         <div className="w-2 h-2 rounded-full bg-green-500" />
       </div>
       <pre className="whitespace-pre-wrap leading-relaxed">
         {displayText}
-        <span className="w-1.5 h-3 bg-yellow-500 inline-block align-middle ml-1 animate-pulse" />
+        <span className="w-1.5 h-3 bg-emerald-500 inline-block align-middle ml-1 animate-pulse" />
       </pre>
     </div>
   );
@@ -64,7 +64,7 @@ export const MethodologySection = () => {
       {/* Diagnostic pulse line */}
       <div className="absolute inset-x-0 top-1/4 h-px z-0 pointer-events-none opacity-20">
         <motion.div
-          className="absolute h-[1px] w-1/3 bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent"
+          className="absolute h-[1px] w-1/3 bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent"
           initial={{ left: "-40%" }}
           whileInView={{ left: "120%" }}
           transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
@@ -78,8 +78,8 @@ export const MethodologySection = () => {
         viewport={{ once: true }}
         className="space-y-8"
       >
-        <div className="inline-block p-3 rounded-2xl bg-yellow-500/10 border border-yellow-500/20">
-          <BrainCircuit className="w-8 h-8 text-yellow-400" />
+        <div className="inline-block p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+          <BrainCircuit className="w-8 h-8 text-emerald-400" />
         </div>
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase">
           SYSTEMS-FIRST DEVELOPMENT
@@ -90,10 +90,10 @@ export const MethodologySection = () => {
           with emerging automation tools, I build production-grade applications
           that leverage the best of both worlds.
         </p>
-        <ul className="space-y-4 font-mono text-sm uppercase tracking-wider text-yellow-300/80">
+        <ul className="space-y-4 font-mono text-sm uppercase tracking-wider text-emerald-300/80">
           {["Robust Architecture Design", "Intelligent Tool Integration", "Data-Driven Development"].map((item) => (
             <li key={item} className="flex items-center gap-3">
-              <span className="w-5 h-[1px] bg-yellow-500/50" />
+              <span className="w-5 h-[1px] bg-emerald-500/50" />
               {item}
             </li>
           ))}
@@ -105,11 +105,11 @@ export const MethodologySection = () => {
         whileInView={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="relative group aspect-square lg:aspect-video rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-br from-yellow-500/10 to-[#16171D]"
+        className="relative group aspect-square lg:aspect-video rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-br from-emerald-500/10 to-[#16171D]"
       >
         <div className="absolute inset-x-0 bottom-0 p-8 pt-24 bg-gradient-to-t from-[#16171D] via-[#16171D]/60 to-transparent">
           <div className="flex items-center gap-3 mb-2">
-            <Cpu className="w-5 h-5 text-yellow-400" />
+            <Cpu className="w-5 h-5 text-emerald-400" />
             <span className="text-xs font-mono uppercase tracking-widest text-white/50">
               System Diagnostics
             </span>

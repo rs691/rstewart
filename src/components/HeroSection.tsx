@@ -15,7 +15,7 @@ export const HeroSection = () => {
             {[0, 1, 2].map((i) => (
               <motion.div
                 key={i}
-                className="absolute h-0.5 bg-linear-to-l from-transparent via-yellow-400/60 to-transparent"
+                className="absolute h-0.5 bg-linear-to-l from-transparent via-emerald-400/60 to-transparent"
                 style={{
                   width: "40%",
                   top: i === 0 ? "40%" : i === 1 ? "60%" : "80%",
@@ -29,7 +29,7 @@ export const HeroSection = () => {
                   delay: i * 0.8,
                 }}
               >
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.8)]" />
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-emerald-400 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.8)]" />
               </motion.div>
             ))}
           </div>
@@ -49,18 +49,18 @@ export const HeroSection = () => {
         </div>
 
         {/* Online badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/5 border border-yellow-500/10 mb-8">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/5 border border-emerald-500/10 mb-8">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500" />
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
           </span>
-          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-yellow-300">
+          <span className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] text-emerald-300">
             System Online: Version 2026.04.04
           </span>
         </div>
 
         {/* Name + title */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1] mb-8 bg-gradient-to-b from-white via-white to-yellow-500/30 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[1] mb-8 bg-gradient-to-b from-white via-white to-emerald-500/30 bg-clip-text text-transparent">
           ROBERT STEWART <br className="hidden md:block" />
           <span className="italic font-light">FULL</span> STACK DEVELOPER
         </h1>

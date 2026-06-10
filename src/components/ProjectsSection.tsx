@@ -16,6 +16,18 @@ const projects = [
     tags: ["Flutter", "Node.js", "Express", "Socket.io", "Redis", "OAuth"]
   },
   {
+    title: "Multi-Product Admin Platform",
+    subtitle: "Centralized Management & Role-Based Access",
+    links: ["AWS"],
+    description: "Architected a role-based admin platform serving two distinct products (YourOpoly and GLG-Bingo) utilizing shared backend services.",
+    bullets: [
+      "Implemented per-product and per-tenant control panels to ensure granular access management and data isolation.",
+      "Separated a privileged administrator layer from scoped self-service mini-dashboards.",
+      "Empowered app owners to update businesses, logos, timers, and mini-games without touching critical systems."
+    ],
+    tags: ["Node.js", "React", "Next.js", "MySQL", "AWS"]
+  },
+  {
     title: "E-Commerce Application",
     subtitle: "Full-stack storefront",
     links: ["Vercel"],
@@ -54,7 +66,7 @@ export const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 border-t border-white/5 relative overflow-hidden group scroll-mt-24">
       {/* Background Decorative Element */}
-      <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-yellow-500/5 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 w-1/3 h-full bg-gradient-to-r from-emerald-500/5 to-transparent pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* Section header */}
@@ -66,14 +78,14 @@ export const ProjectsSection = () => {
           className="flex flex-col items-center text-center mb-16"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-8 bg-yellow-500/40"></span>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
+            <span className="h-px w-8 bg-emerald-500/40"></span>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-500/60 font-medium">
               04 // SELECTED_WORKS
             </span>
-            <span className="h-px w-8 bg-yellow-500/40"></span>
+            <span className="h-px w-8 bg-emerald-500/40"></span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight uppercase mb-4">PROJECTS</h2>
-          <div className="h-1.5 w-16 bg-yellow-500 rounded-full mb-6"></div>
+          <div className="h-1.5 w-16 bg-emerald-500 rounded-full mb-6"></div>
           <p className="max-w-2xl text-white/50 font-light text-lg italic">
             "A showcase of end-to-end platforms, multi-tenant architectures, and operational tools."
           </p>
@@ -92,15 +104,15 @@ export const ProjectsSection = () => {
             >
               <div className="flex items-start justify-between gap-4 mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 rounded-xl bg-yellow-500/10 border border-yellow-500/20 text-yellow-400">
+                  <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
                     <FolderGit2 className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold tracking-tight text-white group-hover/card:text-yellow-400 transition-colors">
+                    <h3 className="text-2xl font-bold tracking-tight text-white group-hover/card:text-emerald-400 transition-colors">
                       {project.title}
                     </h3>
                     <div className="flex items-center gap-2 mt-1">
-                      <Layers className="w-3.5 h-3.5 text-yellow-500/50" />
+                      <Layers className="w-3.5 h-3.5 text-emerald-500/50" />
                       <span className="text-xs font-mono text-white/40 uppercase tracking-widest">
                         {project.subtitle}
                       </span>
@@ -111,7 +123,7 @@ export const ProjectsSection = () => {
 
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.links.map((link, idx) => (
-                  <span key={idx} className="flex items-center gap-1.5 text-xs font-mono text-yellow-500/80 uppercase tracking-widest bg-yellow-500/5 px-2 py-1 rounded-md border border-yellow-500/10">
+                  <span key={idx} className="flex items-center gap-1.5 text-xs font-mono text-emerald-500/80 uppercase tracking-widest bg-emerald-500/5 px-2 py-1 rounded-md border border-emerald-500/10">
                     <ExternalLink className="w-3 h-3" />
                     {link}
                   </span>
@@ -125,7 +137,7 @@ export const ProjectsSection = () => {
               <ul className="space-y-3 mb-8 grow">
                 {project.bullets.map((bullet, idx) => (
                   <li key={idx} className="flex gap-3 text-white/60 font-light text-sm leading-relaxed group/item">
-                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-yellow-500/30 group-hover/item:bg-yellow-500/80 transition-colors shrink-0" />
+                    <div className="mt-2 w-1.5 h-1.5 rounded-full bg-emerald-500/30 group-hover/item:bg-emerald-500/80 transition-colors shrink-0" />
                     <span>{bullet}</span>
                   </li>
                 ))}
@@ -135,7 +147,7 @@ export const ProjectsSection = () => {
                 {project.tags.map((tag, idx) => (
                   <span 
                     key={idx} 
-                    className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-xs font-mono text-white/40 uppercase tracking-widest hover:border-yellow-500/30 hover:text-yellow-400/80 transition-all"
+                    className="px-3 py-1 rounded-lg bg-white/5 border border-white/5 text-xs font-mono text-white/40 uppercase tracking-widest hover:border-emerald-500/30 hover:text-emerald-400/80 transition-all"
                   >
                     {tag}
                   </span>

@@ -27,7 +27,7 @@ export const AboutSection = () => {
         whileInView={{ opacity: 1 }}
       >
         <motion.div 
-          className="h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-500/20 to-transparent absolute top-0"
+          className="h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent absolute top-0"
           animate={{ top: ['0%', '100%'] }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
         />
@@ -43,14 +43,14 @@ export const AboutSection = () => {
           className="flex flex-col items-center text-center mb-14"
         >
           <div className="flex items-center gap-3 mb-4">
-            <span className="h-px w-8 bg-yellow-500/40"></span>
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
+            <span className="h-px w-8 bg-emerald-500/40"></span>
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-500/60 font-medium">
               01 // SYSTEM_PROFILE
             </span>
-            <span className="h-px w-8 bg-yellow-500/40"></span>
+            <span className="h-px w-8 bg-emerald-500/40"></span>
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight uppercase mb-4">ABOUT</h2>
-          <div className="h-1 w-12 bg-yellow-500 rounded-full"></div>
+          <div className="h-1 w-12 bg-emerald-500 rounded-full"></div>
         </motion.div>
 
         {/* Stats row */}
@@ -62,9 +62,9 @@ export const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="group flex flex-col items-center justify-center p-5 rounded-2xl border border-white/5 bg-white/[0.03] hover:bg-white/[0.06] hover:border-yellow-500/20 transition-all duration-300 backdrop-blur-sm"
+              className="group flex flex-col items-center justify-center p-5 rounded-2xl border border-white/5 bg-white/[0.03] hover:bg-white/[0.06] hover:border-emerald-500/20 transition-all duration-300 backdrop-blur-sm"
             >
-              <span className="text-3xl md:text-4xl font-bold tracking-tight text-white group-hover:text-yellow-400 transition-colors mb-1">
+              <span className="text-3xl md:text-4xl font-bold tracking-tight text-white group-hover:text-emerald-400 transition-colors mb-1">
                 {stat.value}
               </span>
               <span className="font-mono text-xs lowercase tracking-widest text-white/40 font-medium text-center">
@@ -85,8 +85,8 @@ export const AboutSection = () => {
             className="p-5 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.03] flex flex-col gap-6 backdrop-blur-sm hover:border-white/10 transition-colors"
           >
             <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
-                <User className="w-5 h-5 text-yellow-400" />
+              <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                <User className="w-5 h-5 text-emerald-400" />
               </div>
               <span className="font-mono text-xs uppercase tracking-widest text-white/50 font-medium">
                 Profile // Bio
@@ -111,11 +111,11 @@ export const AboutSection = () => {
 
             <div className="flex flex-wrap gap-3 pt-2">
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-[10px] sm:text-xs uppercase tracking-wider font-medium">
-                <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-500/70" />
+                <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-500/70" />
                 Council Bluffs, IA
               </div>
               <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 font-mono text-[10px] sm:text-xs uppercase tracking-wider font-medium">
-                <Layers className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-yellow-500/70" />
+                <Layers className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-500/70" />
                 Open to Remote
               </div>
             </div>
@@ -132,8 +132,8 @@ export const AboutSection = () => {
             {/* Education section */}
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
-                  <GraduationCap className="w-5 h-5 text-yellow-400" />
+                <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                  <GraduationCap className="w-5 h-5 text-emerald-400" />
                 </div>
                 <span className="font-mono text-xs uppercase tracking-widest text-white/50 font-medium">
                   Education // Timeline
@@ -148,17 +148,17 @@ export const AboutSection = () => {
                       <div className="absolute left-[11px] top-6 w-[1px] h-[calc(100%+8px)] bg-white/5" />
                     )}
                     
-                    <div className={`mt-1.5 w-[22px] h-[22px] rounded-full border ${edu.active ? 'border-yellow-500 bg-yellow-500/20' : 'border-white/10 bg-white/5'} flex items-center justify-center shrink-0 z-10 transition-colors`}>
-                      <div className={`w-2 h-2 rounded-full ${edu.active ? 'bg-yellow-400' : 'bg-white/20'}`} />
+                    <div className={`mt-1.5 w-[22px] h-[22px] rounded-full border ${edu.active ? 'border-emerald-500 bg-emerald-500/20' : 'border-white/10 bg-white/5'} flex items-center justify-center shrink-0 z-10 transition-colors`}>
+                      <div className={`w-2 h-2 rounded-full ${edu.active ? 'bg-emerald-400' : 'bg-white/20'}`} />
                     </div>
                     
                     <div className="flex flex-col">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-bold tracking-tight text-white group-hover/edu:text-yellow-400 transition-colors">
+                        <span className="text-sm font-bold tracking-tight text-white group-hover/edu:text-emerald-400 transition-colors">
                           {edu.degree}
                         </span>
                         {edu.active && (
-                          <span className="px-1.5 py-0.5 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-[10px] text-yellow-500 font-mono uppercase tracking-widest">
+                          <span className="px-1.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-[10px] text-emerald-500 font-mono uppercase tracking-widest">
                             In Progress
                           </span>
                         )}
@@ -175,8 +175,8 @@ export const AboutSection = () => {
             {/* Awards section */}
             <div className="flex flex-col gap-6 pt-4 border-t border-white/5">
               <div className="flex items-center gap-3">
-                <div className="p-2.5 rounded-xl bg-yellow-500/10 border border-yellow-500/20">
-                  <Award className="w-5 h-5 text-yellow-400" />
+                <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20">
+                  <Award className="w-5 h-5 text-emerald-400" />
                 </div>
                 <span className="font-mono text-xs uppercase tracking-widest text-white/50 font-medium">
                   Recognition // Awards
@@ -185,8 +185,8 @@ export const AboutSection = () => {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {awards.map((award, i) => (
-                  <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5 group/award hover:border-yellow-500/20 transition-all">
-                    <CheckCircle2 className="w-4 h-4 text-yellow-500/60 group-hover/award:text-yellow-400 transition-colors" />
+                  <div key={i} className="flex items-center gap-3 px-4 py-3 rounded-xl bg-white/5 border border-white/5 group/award hover:border-emerald-500/20 transition-all">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500/60 group-hover/award:text-emerald-400 transition-colors" />
                     <span className="text-xs font-mono uppercase tracking-widest text-white/60 group-hover/award:text-white transition-colors">
                       {award}
                     </span>

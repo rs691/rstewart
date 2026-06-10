@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@heroui/react";
 import { OrchestrationGrid } from "./OrchestrationGrid";
 import { SkillShowcase } from "./SkillShowcase";
@@ -50,15 +50,15 @@ const TypewriterCode = () => {
   }, [charIndex, lineIndex]);
 
   return (
-    <div className="mt-4 p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-sm sm:text-sm text-yellow-500/60 min-h-[120px] backdrop-blur-sm shadow-inner group-hover:border-yellow-500/20 transition-colors">
+    <div className="mt-4 p-4 rounded-xl bg-black/40 border border-white/5 font-mono text-sm sm:text-sm text-emerald-500/60 min-h-[120px] backdrop-blur-sm shadow-inner group-hover:border-emerald-500/20 transition-colors">
       <div className="flex gap-1.5 mb-3 opacity-30">
         <div className="w-2 h-2 rounded-full bg-red-500" />
-        <div className="w-2 h-2 rounded-full bg-yellow-500" />
+        <div className="w-2 h-2 rounded-full bg-emerald-500" />
         <div className="w-2 h-2 rounded-full bg-green-500" />
       </div>
       <pre className="whitespace-pre-wrap leading-relaxed">
         {displayText}
-        <span className="w-1.5 h-3 bg-yellow-500 inline-block align-middle ml-1 animate-pulse" />
+        <span className="w-1.5 h-3 bg-emerald-500 inline-block align-middle ml-1 animate-pulse" />
       </pre>
     </div>
   );
@@ -67,22 +67,35 @@ const TypewriterCode = () => {
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
+  // Setup parallax scroll tracking
+  const { scrollYProgress } = useScroll();
+  
+  // Create transforms based on scroll position
+  // Background moves slightly down as you scroll
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  // Hero section moves down faster than normal scrolling for a depth effect
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+  // Hero opacity fades out as you scroll down
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+
   return (
-    <div className="min-h-screen bg-[#09090b] text-white selection:bg-yellow-500/30 selection:text-yellow-200">
-      <div 
+    <div className="min-h-screen bg-[#09090b] text-white selection:bg-emerald-500/30 selection:text-emerald-200">
+      <motion.div 
         className="fixed inset-0 z-0 pointer-events-none opacity-40 bg-cover bg-center bg-no-repeat grayscale brightness-50 contrast-125 blur-xl"
-        style={{ backgroundImage: 'url("/images/bp4.png")' }}
-       
+        style={{ 
+          backgroundImage: 'url("/images/bp4.png")',
+          y: bgY
+        }}
       />
       <OrchestrationGrid />
       
       {/* Navigation Header */}
       <nav className="sticky top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
         <div className="flex items-center gap-2 min-w-0">
-          <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 shrink-0" />
+          <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 shrink-0" />
           <span className="font-mono text-[10px] sm:text-xs md:text-sm tracking-widest text-white/90 uppercase pt-0.5 truncate">
             <span className="hidden min-[400px]:inline">SOFTWARE </span>DEVELOPER{" "}
-            <span className="text-yellow-500/80">v2026.05.02</span>
+            <span className="text-emerald-500/80">v2026.05.02</span>
           </span>
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm font-mono uppercase tracking-widest text-white/50">
@@ -92,7 +105,7 @@ function App() {
           <a href="#projects" className="hover:text-white transition-colors">Projects</a>
           <a href="#methodology" className="hover:text-white transition-colors">Methodology</a>
           <Button 
-            className="h-8 px-4 font-mono text-xs tracking-widest uppercase border border-white/10 hover:bg-white/5 transition-all text-white hover:text-yellow-400 hover:border-yellow-500/50"
+            className="h-8 px-4 font-mono text-xs tracking-widest uppercase border border-white/10 hover:bg-white/5 transition-all text-white hover:text-emerald-400 hover:border-emerald-500/50"
             variant="ghost"
             onClick={() => window.location.href = "mailto:rms.dev@outlook.com"}
           >
@@ -126,7 +139,7 @@ function App() {
             <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Experience</a>
             <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Projects</a>
             <a href="#methodology" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Methodology</a>
-            <a href="mailto:rms.dev@outlook.com" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 hover:text-yellow-400 w-full text-center border-t border-white/6">Contact</a>
+            <a href="mailto:rms.dev@outlook.com" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 hover:text-emerald-400 w-full text-center border-t border-white/6">Contact</a>
           </div>
         </div>
       )}
@@ -135,18 +148,19 @@ function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 overflow-x-hidden min-h-screen flex flex-col relative z-10">
         {/* Hero Section */}
         <section className="relative pt-12 pb-24 flex flex-col items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0, 0.55, 0.45, 1] }}
-          >
+          <motion.div style={{ y: heroY, opacity: heroOpacity }}>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0, 0.55, 0.45, 1] }}
+            >
             <div className="relative mb-12 group">
               {/* EKG Pulse / Drawing Orbs Animation - Behind Image */}
               <div className="absolute inset-0 z-0 pointer-events-none">
                 {[0, 1, 2].map((i) => (
                   <motion.div
                     key={i}
-                    className="absolute h-0.5 bg-linear-to-l from-transparent via-yellow-400/60 to-transparent"
+                    className="absolute h-0.5 bg-linear-to-l from-transparent via-emerald-400/60 to-transparent"
                     style={{ 
                       width: '40%',
                       top: i === 0 ? '40%' : i === 1 ? '60%' : '80%',
@@ -164,7 +178,7 @@ function App() {
                     }}
                   >
                     {/* The "Orb" Head */}
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-yellow-400 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.8)]" />
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-emerald-400 rounded-full shadow-[0_0_10px_rgba(250,204,21,0.8)]" />
                   </motion.div>
                 ))}
               </div>
@@ -183,12 +197,12 @@ function App() {
               />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-500/5 border border-yellow-500/10 mb-6 sm:mb-8 max-w-[95vw]">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/5 border border-emerald-500/10 mb-6 sm:mb-8 max-w-[95vw]">
               <span className="relative flex h-2 w-2 shrink-0">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-yellow-300 text-left">
+              <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.15em] sm:tracking-[0.2em] text-emerald-300 text-left">
                 System Online: Build 2026.05.02
               </span>
             </div>
@@ -199,8 +213,9 @@ function App() {
             
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/50 font-light leading-relaxed">
               Software Developer focused on building <span className="text-white/80 font-normal">robust architectures</span> and exploring the intersection 
-              of traditional development and <span className="text-yellow-500/80 font-normal">agent-based automation</span>.
+              of traditional development and <span className="text-emerald-500/80 font-normal">agent-based automation</span>.
             </p>
+            </motion.div>
           </motion.div>
         </section>
 
@@ -212,7 +227,7 @@ function App() {
           {/* Section Diagnostic Pulse */}
           <div className="absolute inset-0 z-0 pointer-events-none opacity-20">
             <motion.div 
-              className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent"
+              className="absolute h-[1px] w-full bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"
               initial={{ top: '10%', left: '-100%' }}
               whileInView={{ left: '100%' }}
               transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -221,14 +236,14 @@ function App() {
 
           <div className="relative z-10 flex flex-col items-center text-center mb-12">
             <div className="flex items-center gap-3 mb-4">
-              <span className="h-px w-8 bg-yellow-500/40"></span>
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
+              <span className="h-px w-8 bg-emerald-500/40"></span>
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-500/60 font-medium">
                 02 // TECH_STACK
               </span>
-              <span className="h-px w-8 bg-yellow-500/40"></span>
+              <span className="h-px w-8 bg-emerald-500/40"></span>
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 uppercase">ENGINEERING STACK</h2>
-            <div className="h-1.5 w-16 bg-yellow-500 rounded-full mb-6" />
+            <div className="h-1.5 w-16 bg-emerald-500 rounded-full mb-6" />
             <p className="max-w-2xl text-white/50 font-light text-lg">
               Building systems that are scalable, maintainable, and robust.
               Exploring the potential of agent-assisted development with a focus on core software principles.
@@ -248,7 +263,7 @@ function App() {
           {/* Section Diagnostic Pulse */}
           <div className="absolute inset-x-0 top-1/4 h-px z-0 pointer-events-none opacity-20">
              <motion.div 
-              className="absolute h-[1px] w-1/3 bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent"
+              className="absolute h-[1px] w-1/3 bg-gradient-to-r from-transparent via-emerald-400/40 to-transparent"
               initial={{ left: '-40%' }}
               whileInView={{ left: '120%' }}
               transition={{ duration: 6, repeat: Infinity, ease: "linear", delay: 1 }}
@@ -263,14 +278,14 @@ function App() {
             className="space-y-6"
           >
             <div className="flex items-center gap-3 mb-2">
-              <span className="h-px w-8 bg-yellow-500/40"></span>
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-yellow-500/60 font-medium">
+              <span className="h-px w-8 bg-emerald-500/40"></span>
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-emerald-500/60 font-medium">
                 05 // METHODOLOGY
               </span>
-              <span className="h-px w-8 bg-yellow-500/40"></span>
+              <span className="h-px w-8 bg-emerald-500/40"></span>
             </div>
-            <div className="inline-block p-3 rounded-2xl bg-yellow-500/10 border border-yellow-500/20">
-              <BrainCircuit className="w-8 h-8 text-yellow-400" />
+            <div className="inline-block p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
+              <BrainCircuit className="w-8 h-8 text-emerald-400" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase leading-[0.9]">SYSTEMS-FIRST DEVELOPMENT</h2>
             <p className="text-xl text-white/70 font-light leading-relaxed">
@@ -278,17 +293,17 @@ function App() {
               By combining traditional development practices with emerging automation tools, 
               I build production-grade applications that leverage the best of both worlds.
             </p>
-            <ul className="space-y-3 font-mono text-sm uppercase tracking-wider text-yellow-400">
+            <ul className="space-y-3 font-mono text-sm uppercase tracking-wider text-emerald-400">
               <li className="flex items-center gap-3">
-                <span className="w-5 h-[1.5px] bg-yellow-400" />
+                <span className="w-5 h-[1.5px] bg-emerald-400" />
                 Robust Architecture Design
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-5 h-[1.5px] bg-yellow-400" />
+                <span className="w-5 h-[1.5px] bg-emerald-400" />
                 Intelligent Tool Integration
               </li>
               <li className="flex items-center gap-3">
-                <span className="w-5 h-[1.5px] bg-yellow-400" />
+                <span className="w-5 h-[1.5px] bg-emerald-400" />
                 Data-Driven Development
               </li>
             </ul>
@@ -299,11 +314,11 @@ function App() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative group aspect-square lg:aspect-video rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-br from-yellow-500/10 to-[#16171D]"
+            className="relative group aspect-square lg:aspect-video rounded-3xl overflow-hidden border border-white/5 bg-gradient-to-br from-emerald-500/10 to-[#16171D]"
           >
             <div className="absolute inset-x-0 bottom-0 p-8 pt-24 bg-linear-to-t from-[#16171D] via-[#16171D]/60 to-transparent">
               <div className="flex items-center gap-3 mb-2">
-                <Cpu className="w-5 h-5 text-yellow-400" />
+                <Cpu className="w-5 h-5 text-emerald-400" />
                 <span className="text-xs font-mono uppercase tracking-widest text-white/50">System Diagnostics</span>
               </div>
               <TypewriterCode />
@@ -321,7 +336,7 @@ function App() {
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             <a href="mailto:rms.dev@outlook.com" className="hover:text-white transition-all">EMAIL</a>
             <a href="https://github.com/rs691" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">GITHUB</a>
-            <a href="https://www.linkedin.com/in/robert-stewart-m" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all text-yellow-500/80">LINKEDIN</a>
+            <a href="https://www.linkedin.com/in/robert-stewart-m" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all text-emerald-500/80">LINKEDIN</a>
             <a href="https://bellevue.joinhandshake.com/profiles/robertstewart" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">HANDSHAKE</a>
           </div>
         </footer>

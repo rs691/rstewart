@@ -66,14 +66,14 @@ const jobs = [
   <!-- Section header -->
   <div class="exp-reveal flex flex-col items-center text-center mb-14">
     <div class="flex items-center gap-3 mb-4">
-      <span class="h-px w-8 bg-yellow-500/40"></span>
-      <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-yellow-500/60">
+      <span class="h-px w-8 bg-emerald-500/40"></span>
+      <span class="font-mono text-[10px] uppercase tracking-[0.25em] text-emerald-500/60">
         03 // DEPLOYMENT_LOG
       </span>
-      <span class="h-px w-8 bg-yellow-500/40"></span>
+      <span class="h-px w-8 bg-emerald-500/40"></span>
     </div>
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight uppercase mb-4">EXPERIENCE</h2>
-    <div class="h-1 w-12 bg-yellow-500 rounded-full mb-6"></div>
+    <div class="h-1 w-12 bg-emerald-500 rounded-full mb-6"></div>
     <p class="max-w-xl text-white/50 font-light text-base">
       A deployment log of roles, systems built, and problems solved.
     </p>
@@ -92,10 +92,10 @@ const jobs = [
         >
           <!-- Timeline node -->
           <div class="absolute left-0 md:left-4 top-6 hidden sm:flex flex-col items-center">
-            <div class={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all group-hover:border-yellow-500/40 ${job.active ? "bg-yellow-500/10 border-yellow-500/30 active-glow" : "bg-white/5 border-white/10"}`}>
+            <div class={`w-9 h-9 rounded-xl flex items-center justify-center border transition-all group-hover:border-emerald-500/40 ${job.active ? "bg-emerald-500/10 border-emerald-500/30 active-glow" : "bg-white/5 border-white/10"}`}>
               {job.active ? (
                 <!-- GitBranch icon -->
-                <svg class="w-4 h-4 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="w-4 h-4 text-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="6" x2="6" y1="3" y2="15"/>
                   <circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/>
                   <path d="M18 9a9 9 0 0 1-9 9"/>
@@ -111,16 +111,16 @@ const jobs = [
           </div>
 
           <!-- Card -->
-          <div class={`relative p-7 rounded-2xl border transition-all group-hover:bg-white/[0.05] ${job.active ? "border-yellow-500/20 bg-yellow-500/[0.03]" : "border-white/5 bg-white/[0.02]"}`}>
+          <div class={`relative p-7 rounded-2xl border transition-all group-hover:bg-white/[0.05] ${job.active ? "border-emerald-500/20 bg-emerald-500/[0.03]" : "border-white/5 bg-white/[0.02]"}`}>
 
             {/* Active ping */}
             {job.active && (
               <div class="absolute top-5 right-5 flex items-center gap-2">
                 <span class="relative flex h-2 w-2">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
-                <span class="font-mono text-[9px] uppercase tracking-widest text-yellow-400/80">Active</span>
+                <span class="font-mono text-[9px] uppercase tracking-widest text-emerald-400/80">Active</span>
               </div>
             )}
 
@@ -129,7 +129,7 @@ const jobs = [
               <div>
                 <h3 class="text-lg font-semibold tracking-tight text-white leading-tight">{job.title}</h3>
                 <div class="flex items-center gap-2 mt-1">
-                  <span class={`font-mono text-sm ${job.active ? "text-yellow-400" : "text-white/60"}`}>{job.company}</span>
+                  <span class={`font-mono text-sm ${job.active ? "text-emerald-400" : "text-white/60"}`}>{job.company}</span>
                   <span class="text-white/20">·</span>
                   <span class="font-mono text-[11px] uppercase tracking-wider text-white/30">{job.type}</span>
                 </div>
@@ -141,7 +141,7 @@ const jobs = [
             <ul class="space-y-2 mb-5">
               {job.bullets.map((b) => (
                 <li class="flex gap-3 text-sm text-white/60 font-light leading-relaxed">
-                  <span class="mt-2 w-1 h-1 rounded-full bg-yellow-500/50 shrink-0"></span>
+                  <span class="mt-2 w-1 h-1 rounded-full bg-emerald-500/50 shrink-0"></span>
                   {b}
                 </li>
               ))}
@@ -150,7 +150,7 @@ const jobs = [
             <!-- Tags -->
             <div class="flex flex-wrap gap-2">
               {job.tags.map((tag) => (
-                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 font-mono text-[10px] uppercase tracking-wider text-white/40 group-hover:border-yellow-500/20 group-hover:text-yellow-400/60 transition-colors">
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 font-mono text-[10px] uppercase tracking-wider text-white/40 group-hover:border-emerald-500/20 group-hover:text-emerald-400/60 transition-colors">
                   {tag}
                 </span>
               ))}
@@ -177,7 +177,7 @@ const jobs = [
     position: absolute;
     height: 1px;
     width: 50%;
-    background: linear-gradient(to right, transparent, rgba(234,179,8,0.4), transparent);
+    background: linear-gradient(to right, transparent, rgba(16,185,129,0.4), transparent);
     animation: exp-scan-anim 9s linear 1s infinite;
     top: 30%;
   }
