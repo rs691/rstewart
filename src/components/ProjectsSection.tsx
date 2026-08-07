@@ -1,13 +1,16 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FolderGit2, ExternalLink, Terminal, Layers } from 'lucide-react';
+import { motion } from 'motion/react';
+import { FolderGit2, ExternalLink, Layers } from 'lucide-react';
 
 const projects = [
   {
     title: "YourOpoly",
-    subtitle: "Multi-tenant local commerce & gamified discovery experience",
-    links: ["App Store", "Google Play", "goodlifegames.co"],
-    description: "Built a cross-platform mobile system for gamified local commerce—map-based discovery, QR check-ins, leaderboards, promotions, and prize mechanics—backed by a scalable REST API and structured domain models.",
+    subtitle: "Multi-tenant community rewards & gamified local discovery experience",
+    links: [
+      { label: "App Store", href: "https://apps.apple.com/us/app/youropoly/id6759983671" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.neil.chamberopoly" },
+      { label: "goodlifegames.co", href: "https://goodlifegames.co" },
+    ],
+    description: "Built a cross-platform mobile system for gamified local discovery and community rewards—users visit local businesses, scan QR codes to earn points, and redeem deals, with map-based discovery, leaderboards, promotions, and prize mechanics—backed by a scalable REST API and structured domain models.",
     bullets: [
       "Location validation at scale: Implemented server-side proximity enforcement using Haversine distance with configurable per-game radii.",
       "Multi-tenant architecture: Designed organization-scoped data models (games, businesses, memberships) with RBAC-style access control.",
@@ -18,7 +21,7 @@ const projects = [
   {
     title: "Multi-Product Admin Platform",
     subtitle: "Centralized Management & Role-Based Access",
-    links: ["AWS"],
+    links: [{ label: "AWS" }],
     description: "Architected a role-based admin platform serving two distinct products (YourOpoly and GLG-Bingo) utilizing shared backend services.",
     bullets: [
       "Implemented per-product and per-tenant control panels to ensure granular access management and data isolation.",
@@ -30,7 +33,7 @@ const projects = [
   {
     title: "E-Commerce Application",
     subtitle: "Full-stack storefront",
-    links: ["Vercel"],
+    links: [{ label: "Vercel" }],
     description: "Built Next.js storefront with server-side rendering, integrated Stripe payment processing, and PostgreSQL database.",
     bullets: [
       "Implemented session management and optimistic UI updates for improved user experience."
@@ -40,7 +43,7 @@ const projects = [
   {
     title: "Django Reservation System",
     subtitle: "High-traffic booking platform",
-    links: ["Python Anywhere"],
+    links: [{ label: "Python Anywhere" }],
     description: "Developed high-traffic booking platform with HTMX for dynamic UI updates.",
     bullets: [
       "Designed conflict resolution logic for concurrent bookings.",
@@ -51,7 +54,7 @@ const projects = [
   {
     title: "Operational Efficiency & Support Suite",
     subtitle: "Internal Operations & Safety Tools",
-    links: ["Azure"],
+    links: [{ label: "Azure" }],
     description: "Engineered a suite of internal tools to centralize technical service tracking, safety compliance, and estimation.",
     bullets: [
       "Safety Compliance & CMS Integration: Enabled real-time hazard reporting for field installers, achieving full adoption as a daily operational tool.",
@@ -122,12 +125,28 @@ export const ProjectsSection = () => {
               </div>
 
               <div className="flex flex-wrap gap-2 mb-6">
-                {project.links.map((link, idx) => (
-                  <span key={idx} className="flex items-center gap-1.5 text-xs font-mono text-emerald-500/80 uppercase tracking-widest bg-emerald-500/5 px-2 py-1 rounded-md border border-emerald-500/10">
-                    <ExternalLink className="w-3 h-3" />
-                    {link}
-                  </span>
-                ))}
+                {project.links.map((link, idx) => {
+                  const className = "flex items-center gap-1.5 text-xs font-mono text-emerald-500/80 uppercase tracking-widest bg-emerald-500/5 px-2 py-1 rounded-md border border-emerald-500/10 hover:border-emerald-500/40 hover:text-emerald-400 transition-colors";
+                  if (link.href) {
+                    return (
+                      <a
+                        key={idx}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={className}
+                      >
+                        <ExternalLink className="w-3 h-3" />
+                        {link.label}
+                      </a>
+                    );
+                  }
+                  return (
+                    <span key={idx} className={className}>
+                      {link.label}
+                    </span>
+                  );
+                })}
               </div>
 
               <p className="text-white/70 font-light leading-relaxed mb-6">

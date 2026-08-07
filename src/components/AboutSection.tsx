@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { User, MapPin, Layers, GraduationCap, Award, CheckCircle2 } from 'lucide-react';
 
 const stats = [
@@ -97,15 +97,14 @@ export const AboutSection = () => {
               <p className="text-base text-white/70 font-light leading-relaxed">
                 I'm a full-stack engineer who builds production systems — the kind that handle real users,
                 real data, and real scale. At NE Innovation Labs, I architected a multi-tenant,
-                location-based mobile commerce platform from the ground up: Flutter and Node.js
+                location-based community rewards platform from the ground up: Flutter and Node.js
                 on the backend, MySQL for data persistence, and AWS ECS for containerized infrastructure.
               </p>
 
               <p className="text-base text-white/70 font-light leading-relaxed">
-                I spent two years mentoring 100+ students at Bellevue University, improving
-                outcomes by 20% through structured reviews and system design guidance. Currently
-                pursuing my M.S. in Data Science — bridging engineering with machine learning
-                and intelligent, data-driven systems.
+                I spent over two years mentoring 100+ students at Bellevue University through structured
+                reviews and system design guidance. Currently pursuing my M.S. in Data Science —
+                bridging engineering with machine learning and intelligent, data-driven systems.
               </p>
             </div>
 

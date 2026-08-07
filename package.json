@@ -6,28 +6,27 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "astro check"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.4",
     "@astrojs/react": "^5.0.4",
     "@astrojs/sitemap": "^3.7.2",
     "@heroui/react": "^3.0.2",
+    "@heroui/styles": "^3.0.2",
     "@tailwindcss/vite": "^4.2.1",
-    "@types/react": "^19.1.5",
-    "@types/react-dom": "^19.1.5",
     "astro": "^6.2.1",
-    "canvas-confetti": "^1.9.3",
-    "clsx": "^2.1.1",
     "lucide-react": "^1.8.0",
     "motion": "^12.23.15",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwind-merge": "^3.3.1",
+    "tailwind-merge": "^3.6.0",
     "tailwindcss": "^4.2.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
+    "@types/react": "^19.1.5",
+    "@types/react-dom": "^19.1.5",
     "typescript": "^5.9.3"
   }
 }

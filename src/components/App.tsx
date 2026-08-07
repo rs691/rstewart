@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { Button } from "@heroui/react";
 import { OrchestrationGrid } from "./OrchestrationGrid";
 import { SkillShowcase } from "./SkillShowcase";
@@ -107,7 +107,7 @@ function App() {
           <Button 
             className="h-8 px-4 font-mono text-xs tracking-widest uppercase border border-white/10 hover:bg-white/5 transition-all text-white hover:text-emerald-400 hover:border-emerald-500/50"
             variant="ghost"
-            onClick={() => window.location.href = "mailto:rms.dev@outlook.com"}
+            onPress={() => { window.location.href = "mailto:rms.dev@outlook.com"; }}
           >
             Contact
           </Button>
@@ -323,8 +323,7 @@ function App() {
               </div>
               <TypewriterCode />
               <p className="text-base font-light text-white/80 mt-6">
-                Operating with 99.9% uptime across production environments. 
-                Focusing on scalable architectures and robust deployment pipelines.
+                Currently focused on scalable architectures and resilient deployment pipelines.
               </p>
             </div>
           </motion.div>

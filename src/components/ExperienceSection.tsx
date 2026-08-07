@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Briefcase, Calendar, MapPin, CheckCircle2, GitBranch, Terminal } from 'lucide-react';
 
 const jobs = [
@@ -21,41 +21,30 @@ const jobs = [
   {
     title: "CIS Peer Tutor",
     company: "Bellevue University",
-    dates: "Jan 2024 – Dec 2025",
+    dates: "Dec 2023 – April 2026",
     type: "Part-Time",
     active: false,
     bullets: [
       "Mentored 100+ students across full-stack development, databases, and system design.",
-      "Improved average student outcomes by 20% through structured, hands-on learning paths.",
+      "Designed structured, hands-on learning paths with a consistent focus on measurable skill growth.",
       "Conducted in-depth code reviews and guided best practices in architecture and testing.",
       "Developed curriculum materials bridging theoretical concepts with real-world practice.",
     ],
     tags: ["Full-Stack", "System Design", "Code Review", "Mentorship"],
   },
   {
-    title: "Junior Web Developer",
+    title: "Junior Web Developer / IT Support Specialist",
     company: "Pierson Wireless",
-    dates: "May 2023 – Nov 2023",
+    dates: "Oct 2022 – Nov 2023",
     type: "Full-Time",
     active: false,
     bullets: [
-      "Built web-based cost estimation tool using Laravel and MySQL, automating quote generation and reducing manual workload by 40%.",
-      "Developed and deployed a ticket management system using Laravel with Azure CI/CD pipelines.",
-      "Collaborated across the full SDLC from requirements through production deployment.",
+      "Application Development: Built web-based cost estimation tool using Laravel and MySQL, automating quote generation and reducing manual workload by 40%.",
+      "Service Desk & Compliance: Developed and deployed a ticket management system using Laravel with Azure CI/CD pipelines, and integrated safety compliance and hazard reporting into the company CMS, adopted company-wide.",
+      "Endpoint Security & Provisioning: Automated user provisioning and directory services using JumpCloud, reducing support overhead by 50%; managed endpoint security and threat detection using CrowdStrike Falcon.",
+      "Full SDLC: Collaborated across the full software development lifecycle, from requirements through production deployment.",
     ],
-    tags: ["Laravel", "PHP", "Azure", "CI/CD", "MySQL"],
-  },
-  {
-    title: "IT Support Specialist",
-    company: "Pierson Wireless",
-    dates: "Oct 2022 – May 2023",
-    type: "Full-Time",
-    active: false,
-    bullets: [
-      "Resolved complex technical issues and improved system reliability by leveraging CrowdStrike Falcon for proactive threat detection and real-time endpoint monitoring.",
-      "Streamlined onboarding and documentation using JumpCloud, automating user provisioning and directory services to reduce support overhead by 50%.",
-    ],
-    tags: ["CrowdStrike Falcon", "JumpCloud", "Networking", "IT Support"],
+    tags: ["Laravel", "PHP", "Azure", "CI/CD", "MySQL", "CrowdStrike Falcon", "JumpCloud", "IT Support"],
   },
 ];
 
