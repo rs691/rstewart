@@ -55,13 +55,13 @@ const projects = [
     title: "Operational Efficiency & Support Suite",
     subtitle: "Internal Operations & Safety Tools",
     links: [{ label: "Azure" }],
-    description: "Engineered a suite of internal tools to centralize technical service tracking, safety compliance, and estimation.",
+    description: "Developed internal business applications using .NET technologies (C# and Blazor) with SQL Server, deployed through Azure CI/CD pipelines.",
     bullets: [
       "Safety Compliance & CMS Integration: Enabled real-time hazard reporting for field installers, achieving full adoption as a daily operational tool.",
-      "Estimation Software Enhancement: Developed a dynamic pricing and service catalog leveraging MySQL and external APIs.",
-      "Service Desk CRUD Application: Engineered a Laravel-based help desk platform with full CRUD functionality."
+      "Estimation Software Enhancement: Developed a dynamic pricing and service catalog leveraging SQL Server and external APIs.",
+      "Service Desk Application: Engineered a Blazor-based help desk platform with full CRUD functionality."
     ],
-    tags: ["Laravel", "MySQL", "Azure", "PHP"]
+    tags: ["C#", "Blazor", ".NET", "SQL Server", "Azure", "CI/CD"]
   }
 ];
 
