@@ -26,7 +26,7 @@ const jobs = [
     active: false,
     bullets: [
       "Mentored 100+ students across full-stack development, databases, and system design.",
-      "Designed structured, hands-on learning paths with a consistent focus on measurable skill growth.",
+      "Mentored through structured, hands-on learning paths, with a consistent focus on measurable skill growth.",
       "Conducted in-depth code reviews and guided best practices in architecture and testing.",
       "Developed curriculum materials bridging theoretical concepts with real-world practice.",
     ],

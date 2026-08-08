@@ -90,7 +90,7 @@ function App() {
       <OrchestrationGrid />
       
       {/* Navigation Header */}
-      <nav className="sticky top-0 z-50 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
+      <nav className="sticky top-0 z-50 relative px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between border-b border-white/5 bg-[#09090b]/80 backdrop-blur-md">
         <div className="flex items-center gap-2 min-w-0">
           <Terminal className="w-5 h-5 sm:w-6 sm:h-6 text-emerald-400 shrink-0" />
           <span className="font-mono text-[10px] sm:text-xs md:text-sm tracking-widest text-white/90 uppercase pt-0.5 truncate">
@@ -132,7 +132,7 @@ function App() {
         </div>
       {/* Mobile nav panel */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 z-40 bg-[#09090b]/95 border-b border-white/6 backdrop-blur-sm">
+        <div className="md:hidden absolute top-full left-0 right-0 z-40 bg-[#09090b] border-b border-white/6">
           <div className="flex flex-col items-center gap-3 py-4 text-white/80 font-mono uppercase tracking-wider">
             <a href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">About</a>
             <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Stack</a>

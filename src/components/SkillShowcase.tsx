@@ -2,10 +2,10 @@ import { motion } from "motion/react";
 import { Code2, Globe, Smartphone, BrainCircuit } from "lucide-react";
 
 const SKILLS = [
-  { name: "AI Agent Orchestration", icon: BrainCircuit, color: "text-amber-400" },
+  { name: "AI Agent Orchestration", icon: BrainCircuit, color: "text-emerald-400" },
   { name: "Software Development", icon: Code2, color: "text-emerald-400" },
-  { name: "Web Development", icon: Globe, color: "text-orange-400" },
-  { name: "Mobile Development", icon: Smartphone, color: "text-emerald-500" },
+  { name: "Web Development", icon: Globe, color: "text-emerald-400" },
+  { name: "Mobile Development", icon: Smartphone, color: "text-emerald-400" },
 ];
 
 const TECH_CATEGORIES = [
