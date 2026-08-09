@@ -62,7 +62,22 @@ const projects = [
       "Service Desk Application: Engineered a Blazor-based help desk platform with full CRUD functionality."
     ],
     tags: ["C#", "Blazor", ".NET", "SQL Server", "Azure", "CI/CD"]
-  }
+  },
+  {
+    title: "Multi-Tenant Task Board API",
+    subtitle: "ASP.NET Core Minimal API",
+    links: [
+      { label: "Live Demo", href: "https://multi-tenant-task-board-rs691.azurewebsites.net" },
+      { label: "GitHub", href: "https://github.com/rs691/multi-tenant-task-board" },
+    ],
+    description: "Built a minimal ASP.NET Core Web API demonstrating tenant-isolated data access — the same multi-tenant architecture pattern shipped in production with Node.js and .NET/Blazor, implemented here from scratch in C# to prove the pattern transfers across stacks.",
+    bullets: [
+      "Automatic tenant isolation: Implemented an EF Core global query filter scoping every query to the current tenant, so isolation lives in one place rather than being repeated (and potentially forgotten) across endpoints.",
+      "JWT-based auth: Issued tokens carrying a tenant claim that drives the isolation end to end, verified in production by confirming one tenant's data is fully invisible to another.",
+      "CI/CD pipeline: Built a GitHub Actions workflow that builds, tests, and auto-deploys to Azure App Service on every push to main."
+    ],
+    tags: ["C#", "ASP.NET Core", "EF Core", "SQLite", "JWT", "Azure", "GitHub Actions"]
+  },
 ];
 
 export const ProjectsSection = () => {

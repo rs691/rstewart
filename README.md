@@ -61,7 +61,7 @@ Omega Nu Lambda · Gottsch Scholarship · DREAM Scholarship
 ### Junior Web Developer / IT Support Specialist — Pierson Wireless
 *Oct 2022 – Nov 2023*
 
-- Cost estimation tool (Laravel + MySQL) — ~40% less manual quote work
+- Cost estimation tool (.NET/C#/Blazor + SQL Server) — ~40% less manual quote work
 - Ticket management + safety/hazard reporting in company CMS (Azure CI/CD)
 - JumpCloud provisioning (~50% less support overhead); CrowdStrike Falcon endpoint security
 
@@ -104,7 +104,7 @@ Internal business apps in **.NET (C# / Blazor)** with SQL Server, deployed via A
 
 | Area | Tools |
 |------|--------|
-| **Languages & frameworks** | Python, Dart, TypeScript, JavaScript, Flutter, Next.js, React, Vue, Django, Node.js, Laravel, ASP.NET |
+| **Languages & frameworks** | Python, C#, Dart, TypeScript, JavaScript, Flutter, Next.js, React, Vue, Django, Node.js, Blazor, ASP.NET |
 | **Databases** | PostgreSQL (PostGIS), MySQL, SQL Server, Redis, Supabase, Firestore |
 | **Cloud & infra** | AWS (ECS, RDS, Lambda), Azure, Docker, CI/CD, GitHub Actions, Vercel |
 | **Systems** | Multi-tenant, distributed systems, real-time events, REST APIs, workflow automation |

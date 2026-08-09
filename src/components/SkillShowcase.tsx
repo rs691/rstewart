@@ -11,7 +11,7 @@ const SKILLS = [
 const TECH_CATEGORIES = [
   {
     title: "Languages & Frameworks",
-    skills: ["Python", "Dart", "TypeScript", "JavaScript", "Flutter", "Next.js", "React", "Vue", "Django", "Node.js", "Laravel", "ASP.NET"]
+    skills: ["Python", "C#", "Dart", "TypeScript", "JavaScript", "Flutter", "Next.js", "React", "Vue", "Django", "Node.js", "Blazor", "ASP.NET"]
   },
   {
     title: "Databases & Data",

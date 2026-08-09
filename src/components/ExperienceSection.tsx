@@ -39,12 +39,12 @@ const jobs = [
     type: "Full-Time",
     active: false,
     bullets: [
-      "Application Development: Built web-based cost estimation tool using Laravel and MySQL, automating quote generation and reducing manual workload by 40%.",
-      "Service Desk & Compliance: Developed and deployed a ticket management system using Laravel with Azure CI/CD pipelines, and integrated safety compliance and hazard reporting into the company CMS, adopted company-wide.",
+      "Application Development: Built web-based cost estimation tool using .NET technologies (C# and Blazor) with SQL Server, automating quote generation and reducing manual workload by 40%.",
+      "Service Desk & Compliance: Developed and deployed a ticket management system using Blazor with Azure CI/CD pipelines, and integrated safety compliance and hazard reporting into the company CMS, adopted company-wide.",
       "Endpoint Security & Provisioning: Automated user provisioning and directory services using JumpCloud, reducing support overhead by 50%; managed endpoint security and threat detection using CrowdStrike Falcon.",
       "Full SDLC: Collaborated across the full software development lifecycle, from requirements through production deployment.",
     ],
-    tags: ["Laravel", "PHP", "Azure", "CI/CD", "MySQL", "CrowdStrike Falcon", "JumpCloud", "IT Support"],
+    tags: ["C#", "Blazor", ".NET", "SQL Server", "Azure", "CI/CD", "CrowdStrike Falcon", "JumpCloud", "IT Support"],
   },
 ];
 
