@@ -9,6 +9,8 @@ Full-stack software developer focused on scalable architectures, multi-tenant sy
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![GitLab Pages](https://img.shields.io/badge/Deploy-GitLab%20Pages-FC6D26?logo=gitlab&logoColor=white)](https://gitlab.com/rs691/rstewart/-/pipelines)
+[![GitHub Pages](https://img.shields.io/badge/Deploy-GitHub%20Pages-222222?logo=github&logoColor=white)](https://github.com/rs691/rstewart/actions/workflows/astro.yml)
+[![Build](https://github.com/rs691/rstewart/actions/workflows/astro.yml/badge.svg)](https://github.com/rs691/rstewart/actions/workflows/astro.yml)
 
 Council Bluffs, IA
 
@@ -123,7 +125,17 @@ npm install && npm run dev
 npm run build && npm run preview
 ```
 
-Deploy: push to `main` on [GitLab](https://gitlab.com/rs691/rstewart) → `.gitlab-ci.yml` builds with Node 22 and publishes **GitLab Pages**. Custom domain: **robert-stewart.dev**. Mirror: [github.com/rs691/rstewart](https://github.com/rs691/rstewart).
+Deploy (both remotes, same `main`):
+
+- **GitHub Pages** — [`.github/workflows/astro.yml`](.github/workflows/astro.yml) builds with Node 22 and deploys `dist/` (custom domain: **robert-stewart.dev**)
+- **GitLab Pages** — [`.gitlab-ci.yml`](.gitlab-ci.yml) builds with Node 22 and publishes the Pages artifact
+
+Push to either remote to update that host:
+
+```bash
+git push origin main   # GitHub Pages
+git push gitlab main   # GitLab Pages
+```
 
 ---
 
