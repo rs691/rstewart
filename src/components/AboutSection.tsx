@@ -10,7 +10,7 @@ const stats = [
 ];
 
 const education = [
-  { degree: "M.S. Data Science",        school: "Bellevue University",          years: "Expected 2027", active: true  },
+  { degree: "M.S. Data Science",        school: "Bellevue University",          years: "Expected 2028", active: true  },
   { degree: "B.S. Software Development", school: "Bellevue University",          years: "2022 – 2025", active: false },
   { degree: "A.A. Computer Science",    school: "Iowa Western C.C.",            years: "2019 – 2022", active: false },
 ];
