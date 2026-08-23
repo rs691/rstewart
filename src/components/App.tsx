@@ -6,14 +6,15 @@ import { SkillShowcase } from "./SkillShowcase";
 import { AboutSection } from "./AboutSection";
 import { ExperienceSection } from "./ExperienceSection";
 import { ProjectsSection } from "./ProjectsSection";
-import { Cpu, Terminal, BrainCircuit } from "lucide-react";
+import { RESUME_PDF } from "../consts";
+import { Cpu, Terminal, BrainCircuit, Download } from "lucide-react";
 
 const TypewriterCode = () => {
   const codeLines = [
     "> system.check_health()",
     "STATUS: NOMINAL",
-    "> node_utilization --avg",
-    "CPU: 12.4% | MEM: 4.2GB",
+    "> release_pipeline --status",
+    "BUILD: VERIFIED",
     "> logs.tail(2)",
     "[INFO] Auth process initialized",
     "[OK] Deployment verified"
@@ -103,7 +104,14 @@ function App() {
           <a href="#skills" className="hover:text-white transition-colors">Stack</a>
           <a href="#experience" className="hover:text-white transition-colors">Experience</a>
           <a href="#projects" className="hover:text-white transition-colors">Projects</a>
-          <a href="#methodology" className="hover:text-white transition-colors">Methodology</a>
+          <a href="#methodology" className="hover:text-white transition-colors">Approach</a>
+          <a
+            href={RESUME_PDF}
+            download="Robert-Stewart-Resume.pdf"
+            className="hover:text-emerald-400 transition-colors"
+          >
+            Resume
+          </a>
           <Button 
             className="h-8 px-4 font-mono text-xs tracking-widest uppercase border border-white/10 hover:bg-white/5 transition-all text-white hover:text-emerald-400 hover:border-emerald-500/50"
             variant="ghost"
@@ -138,7 +146,15 @@ function App() {
             <a href="#skills" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Stack</a>
             <a href="#experience" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Experience</a>
             <a href="#projects" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Projects</a>
-            <a href="#methodology" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Methodology</a>
+            <a href="#methodology" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 hover:text-white w-full text-center">Approach</a>
+            <a
+              href={RESUME_PDF}
+              download="Robert-Stewart-Resume.pdf"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-2 hover:text-emerald-400 w-full text-center"
+            >
+              Download resume
+            </a>
             <a href="mailto:rms.dev@outlook.com" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 hover:text-emerald-400 w-full text-center border-t border-white/6">Contact</a>
           </div>
         </div>
@@ -211,10 +227,28 @@ function App() {
               ROBERT <br className="block sm:hidden md:block" /> STEWART
             </h1>
             
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-white/50 font-light leading-relaxed">
-              Software Developer focused on building <span className="text-white/80 font-normal">robust architectures</span> and exploring the intersection 
-              of traditional development and <span className="text-emerald-500/80 font-normal">agent-based automation</span>.
+            <p className="max-w-2xl mx-auto text-base md:text-lg lg:text-xl text-white/75 font-light leading-relaxed px-2">
+              I build reliable software — mobile apps, websites, and the systems behind them — with a focus on
+              clear design, steady delivery, and tools that help teams move faster.
             </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+              <Button
+                className="h-11 px-6 font-medium text-sm tracking-wide border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 transition-all text-white hover:text-emerald-300"
+                variant="ghost"
+                onPress={() => { window.location.href = "mailto:rms.dev@outlook.com"; }}
+              >
+                Get in touch
+              </Button>
+              <a
+                href={RESUME_PDF}
+                download="Robert-Stewart-Resume.pdf"
+                className="inline-flex items-center gap-2 h-11 px-6 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-sm font-medium text-white/90 transition-all"
+              >
+                <Download className="w-4 h-4 text-emerald-400" />
+                Download resume (PDF)
+              </a>
+            </div>
             </motion.div>
           </motion.div>
         </section>
@@ -244,9 +278,8 @@ function App() {
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 uppercase">ENGINEERING STACK</h2>
             <div className="h-1.5 w-16 bg-emerald-500 rounded-full mb-6" />
-            <p className="max-w-2xl text-white/50 font-light text-lg">
-              Building systems that are scalable, maintainable, and robust.
-              Exploring the potential of agent-assisted development with a focus on core software principles.
+            <p className="max-w-2xl text-white/75 font-light text-base md:text-lg leading-relaxed">
+              The languages, frameworks, and platforms I work with most often.
             </p>
           </div>
           <SkillShowcase />
@@ -287,24 +320,23 @@ function App() {
             <div className="inline-block p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/20">
               <BrainCircuit className="w-8 h-8 text-emerald-400" />
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold tracking-tight uppercase leading-[0.9]">SYSTEMS-FIRST DEVELOPMENT</h2>
-            <p className="text-xl text-white/70 font-light leading-relaxed">
-              In a rapidly evolving landscape, I focus on the fundamentals of building great software. 
-              By combining traditional development practices with emerging automation tools, 
-              I build production-grade applications that leverage the best of both worlds.
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight uppercase leading-tight">How I work</h2>
+            <p className="text-base md:text-lg text-white/80 font-light leading-relaxed">
+              I focus on building software that lasts — solid structure first, then smart use of modern tools
+              where they genuinely help. The goal is always something people can trust and teams can maintain.
             </p>
-            <ul className="space-y-3 font-mono text-sm uppercase tracking-wider text-emerald-400">
+            <ul className="space-y-3 text-base text-emerald-400/90 font-medium">
               <li className="flex items-center gap-3">
                 <span className="w-5 h-[1.5px] bg-emerald-400" />
-                Robust Architecture Design
+                Plan for growth from the start
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-5 h-[1.5px] bg-emerald-400" />
-                Intelligent Tool Integration
+                Use automation thoughtfully
               </li>
               <li className="flex items-center gap-3">
                 <span className="w-5 h-[1.5px] bg-emerald-400" />
-                Data-Driven Development
+                Let data inform decisions
               </li>
             </ul>
           </motion.div>
@@ -322,8 +354,8 @@ function App() {
                 <span className="text-xs font-mono uppercase tracking-widest text-white/50">System Diagnostics</span>
               </div>
               <TypewriterCode />
-              <p className="text-base font-light text-white/80 mt-6">
-                Currently focused on scalable architectures and resilient deployment pipelines.
+              <p className="text-base md:text-lg font-light text-white/80 mt-6 leading-relaxed">
+                Focused on dependable releases, clear architecture, and software that's easy to live with long term.
               </p>
             </div>
           </motion.div>
@@ -333,6 +365,7 @@ function App() {
         <footer id="contact" className="py-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-white/30 text-sm font-mono tracking-widest uppercase scroll-mt-24">
           <p>© 2026. ALL SYSTEMS NOMINAL.</p>
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+            <a href={RESUME_PDF} download="Robert-Stewart-Resume.pdf" className="hover:text-white transition-all">RESUME</a>
             <a href="mailto:rms.dev@outlook.com" className="hover:text-white transition-all">EMAIL</a>
             <a href="https://github.com/rs691" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all">GITHUB</a>
             <a href="https://www.linkedin.com/in/robert-stewart-m" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-all text-emerald-500/80">LINKEDIN</a>
