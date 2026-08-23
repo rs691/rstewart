@@ -2,7 +2,7 @@
 
 Full-stack software developer focused on scalable architectures, multi-tenant systems, and agent-assisted automation.
 
-**Live site:** [robert-stewart.dev](https://robert-stewart.dev) · **Resume:** [PDF](public/documents/Resume.pdf) · Open to remote full-stack / platform roles
+**Live site:** [robert-stewart.dev](https://robert-stewart.dev) · **Resume:** [PDF](public/documents/Robert-Stewart-Resume.pdf) · Open to remote full-stack / platform roles
 
 [![Astro](https://img.shields.io/badge/Astro-6-FF5D01?logo=astro&logoColor=white)](https://astro.build)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=111827)](https://react.dev)
@@ -142,7 +142,7 @@ git push gitlab main   # GitLab Pages
 ## Connect
 
 - **Site:** [robert-stewart.dev](https://robert-stewart.dev)
-- **Resume:** [Download PDF](public/documents/Resume.pdf)
+- **Resume:** [Download PDF](public/documents/Robert-Stewart-Resume.pdf)
 - **LinkedIn:** [robert-stewart-m](https://www.linkedin.com/in/robert-stewart-m)
 - **GitHub:** [rs691](https://github.com/rs691)
 - **GitLab:** [rs691/rstewart](https://gitlab.com/rs691/rstewart)

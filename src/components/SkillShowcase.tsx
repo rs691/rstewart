@@ -10,20 +10,32 @@ const SKILLS = [
 
 const TECH_CATEGORIES = [
   {
-    title: "Languages & Frameworks",
-    skills: ["Python", "Dart", "TypeScript", "JavaScript", "Flutter", "Next.js", "React", "Vue", "Django", "Node.js", "Laravel", "ASP.NET"]
+    title: "Languages",
+    skills: ["Python", "Java", "C#", "Dart", "TypeScript", "JavaScript", "PHP", "SQL", "HTML/CSS"]
   },
   {
-    title: "Databases & Data",
-    skills: ["PostgreSQL (PostGIS)", "MySQL", "SQL Server", "Redis", "Supabase", "Firestore"]
+    title: "Frontend",
+    skills: ["React", "Next.js", "Flutter", "Vue.js", "HTMX", "Tailwind CSS"]
   },
   {
-    title: "Cloud & Infrastructure",
-    skills: ["AWS (ECS, RDS, Lambda)", "Azure", "Docker", "CI/CD", "GitHub Actions", "Vercel"]
+    title: "Backend",
+    skills: ["Node.js", "Express", "Django", "Laravel", "ASP.NET", "REST APIs", "WebSockets / Socket.io"]
   },
   {
-    title: "Systems & Architecture",
-    skills: ["Multi-tenant systems", "Distributed systems", "Real-time event processing", "REST APIs", "Workflow automation"]
+    title: "Cloud & DevOps",
+    skills: ["AWS (ECS, Lambda, RDS)", "Azure", "Docker", "GitHub Actions", "CI/CD", "Vercel"]
+  },
+  {
+    title: "Data",
+    skills: ["PostgreSQL", "MySQL", "SQL Server", "Redis", "Firestore", "Supabase"]
+  },
+  {
+    title: "AI Engineering",
+    skills: ["Gemini API", "Multi-agent orchestration", "Event-driven AI systems", "LLM integration"]
+  },
+  {
+    title: "Testing",
+    skills: ["Jest", "React Testing Library", "Flutter Test", "Postman"]
   }
 ];
 
@@ -68,14 +80,14 @@ export const SkillShowcase = () => {
             viewport={{ once: true }}
             className="flex flex-col gap-4"
           >
-            <h4 className="text-sm font-mono text-white/50 uppercase tracking-widest border-b border-white/10 pb-2">
+            <h4 className="text-sm font-mono text-white/60 uppercase tracking-widest border-b border-white/10 pb-2">
               {category.title}
             </h4>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
                 <span 
                   key={skill} 
-                  className="px-3 py-1.5 rounded-lg border border-white/5 bg-white/5 text-sm font-light text-white/70 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
+                  className="px-3 py-1.5 rounded-lg border border-white/5 bg-white/5 text-sm md:text-base font-light text-white/75 hover:text-emerald-400 hover:border-emerald-500/30 transition-colors"
                 >
                   {skill}
                 </span>
